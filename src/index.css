@@ -4,16 +4,12 @@
 
 @layer base {
   body {
-    @apply bg-spy-dark text-spy-accent font-goldeneye;
+    @apply bg-spy-dark text-spy-accent;
   }
 }
 
 @layer components {
   .folder-tab {
     @apply px-4 py-2 bg-folder-brown text-spy-accent hover:bg-spy-accent hover:text-spy-dark transition-colors duration-300;
-  }
-  
-  .classified-text {
-    @apply font-goldeneye uppercase tracking-wider;
   }
 } 

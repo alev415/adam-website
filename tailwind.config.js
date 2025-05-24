@@ -12,7 +12,7 @@ export default {
         'folder-brown': '#8b4513',
       },
       fontFamily: {
-        'goldeneye': ['Courier New', 'monospace'],
+        'retro': ['"Press Start 2P"', 'cursive'],
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
