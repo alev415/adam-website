@@ -14,6 +14,9 @@ export default {
       fontFamily: {
         'goldeneye': ['Courier New', 'monospace'],
       },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+      },
     },
   },
   plugins: [],
