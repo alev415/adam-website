@@ -19,8 +19,8 @@ export const FolderLayout = ({ children, title }: FolderLayoutProps) => {
     >
       <div className="w-full">
         {/* Main Folder */}
-        <div className="bg-folder-dark h-screen md:h-auto md:p-1">
-          <div className="border-0 md:border-2 border-text-dark bg-folder-brown bg-folder-texture bg-folder-pattern p-4 md:p-8 relative h-full md:min-h-[600px] md:m-8">
+        <div className="bg-folder-dark min-h-screen md:min-h-0 md:h-auto md:p-1">
+          <div className="border-0 md:border-2 border-text-dark bg-folder-brown bg-folder-texture bg-folder-pattern p-4 md:p-8 relative min-h-screen md:min-h-[600px] md:m-8">
             {/* Top Secret Stamp */}
             <div className="absolute top-8 right-8 transform rotate-[-12deg] text-stamp-red font-retro">
               <div className="border-4 border-stamp-red px-4 py-2">
@@ -38,7 +38,7 @@ export const FolderLayout = ({ children, title }: FolderLayoutProps) => {
             </div>
             
             {/* Classified Footer */}
-            <div className="mt-12 text-xs font-retro text-text-dark opacity-50">
+            <div className="mt-12 text-xs font-retro text-text-dark opacity-50 pb-8">
               CLEARANCE LEVEL: TOP SECRET
             </div>
 
