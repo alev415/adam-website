@@ -1,27 +1,38 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { FolderLayout } from './FolderLayout';
 
 export const Work = () => {
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      className="min-h-screen bg-spy-dark p-8"
-    >
-      <div className="max-w-4xl mx-auto">
-        <Link to="/" className="folder-tab inline-block mb-8">
-          ← Back to Menu
-        </Link>
-        
-        <div className="bg-folder-brown p-1">
-          <div className="border-2 border-spy-accent p-8">
-            <h1 className="text-4xl classified-text mb-8">Work</h1>
-            <p className="mb-4">Content coming soon...</p>
+    <FolderLayout title="PORTFOLIO">
+      <div className="space-y-8">
+        <div className="border-l-4 border-folder-dark pl-6">
+          <h2 className="font-retro text-lg text-text-dark mb-2">Project Alpha</h2>
+          <h3 className="font-retro text-sm text-text-dark opacity-75 mb-4">Lead Product Manager</h3>
+          <p className="font-retro text-xs text-text-dark mb-4">
+            Innovative product that revolutionized how users interact with our platform.
+            Led end-to-end development from conception to launch.
+          </p>
+          <div className="flex flex-wrap gap-2">
+            <span className="font-retro text-xs bg-folder-dark px-2 py-1 text-text-dark">Strategy</span>
+            <span className="font-retro text-xs bg-folder-dark px-2 py-1 text-text-dark">UX Design</span>
+            <span className="font-retro text-xs bg-folder-dark px-2 py-1 text-text-dark">Analytics</span>
+          </div>
+        </div>
+
+        <div className="border-l-4 border-folder-dark pl-6">
+          <h2 className="font-retro text-lg text-text-dark mb-2">Project Beta</h2>
+          <h3 className="font-retro text-sm text-text-dark opacity-75 mb-4">Product Manager</h3>
+          <p className="font-retro text-xs text-text-dark mb-4">
+            Successful launch of a new feature set that increased user engagement by 200%.
+            Managed a team of designers and engineers.
+          </p>
+          <div className="flex flex-wrap gap-2">
+            <span className="font-retro text-xs bg-folder-dark px-2 py-1 text-text-dark">Leadership</span>
+            <span className="font-retro text-xs bg-folder-dark px-2 py-1 text-text-dark">Product Development</span>
+            <span className="font-retro text-xs bg-folder-dark px-2 py-1 text-text-dark">Team Management</span>
           </div>
         </div>
       </div>
-    </motion.div>
+    </FolderLayout>
   );
 }; 

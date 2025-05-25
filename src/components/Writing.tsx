@@ -1,27 +1,38 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { FolderLayout } from './FolderLayout';
 
 export const Writing = () => {
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      className="min-h-screen bg-spy-dark p-8"
-    >
-      <div className="max-w-4xl mx-auto">
-        <Link to="/" className="folder-tab inline-block mb-8">
-          ← Back to Menu
-        </Link>
-        
-        <div className="bg-folder-brown p-1">
-          <div className="border-2 border-spy-accent p-8">
-            <h1 className="text-4xl classified-text mb-8">Writing</h1>
-            <p className="mb-4">Content coming soon...</p>
+    <FolderLayout title="WRITING">
+      <div className="space-y-8">
+        <div className="border-l-4 border-folder-dark pl-6">
+          <h2 className="font-retro text-lg text-text-dark mb-2">The Future of Product Management</h2>
+          <h3 className="font-retro text-sm text-text-dark opacity-75 mb-4">Published on Medium • 2023</h3>
+          <p className="font-retro text-xs text-text-dark mb-4">
+            An exploration of how AI and machine learning are transforming the role of product managers
+            and what skills will be crucial in the coming years.
+          </p>
+          <div className="flex flex-wrap gap-2">
+            <span className="font-retro text-xs bg-folder-dark px-2 py-1 text-text-dark">AI</span>
+            <span className="font-retro text-xs bg-folder-dark px-2 py-1 text-text-dark">Product Management</span>
+            <span className="font-retro text-xs bg-folder-dark px-2 py-1 text-text-dark">Future of Work</span>
+          </div>
+        </div>
+
+        <div className="border-l-4 border-folder-dark pl-6">
+          <h2 className="font-retro text-lg text-text-dark mb-2">Building Products That Matter</h2>
+          <h3 className="font-retro text-sm text-text-dark opacity-75 mb-4">Personal Blog • 2023</h3>
+          <p className="font-retro text-xs text-text-dark mb-4">
+            Insights and lessons learned from years of product development, focusing on creating
+            meaningful impact while maintaining technical excellence.
+          </p>
+          <div className="flex flex-wrap gap-2">
+            <span className="font-retro text-xs bg-folder-dark px-2 py-1 text-text-dark">Product Strategy</span>
+            <span className="font-retro text-xs bg-folder-dark px-2 py-1 text-text-dark">User Impact</span>
+            <span className="font-retro text-xs bg-folder-dark px-2 py-1 text-text-dark">Development</span>
           </div>
         </div>
       </div>
-    </motion.div>
+    </FolderLayout>
   );
 }; 
