@@ -29,7 +29,7 @@ export const MainMenu = () => {
               <img 
                 src={portraitImage} 
                 alt="Adam Levinson" 
-                className="w-full h-full object-cover object-top"
+                className="w-full h-full object-cover object-[center_15%]"
               />
             </div>
             
