@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link, useNavigate } from 'react-router-dom';
+import portraitImage from '../assets/images/portrait.jpg';
 
 export const MainMenu = () => {
   const navigate = useNavigate();
@@ -24,17 +25,16 @@ export const MainMenu = () => {
             </div>
 
             {/* Photo Container */}
-            <div className="absolute top-8 left-8 w-48 h-48 bg-gray-200 border-4 border-folder-dark shadow-lg">
-              {/* Placeholder silhouette */}
-              <div className="w-full h-full bg-gray-700 flex items-center justify-center">
-                <svg className="w-32 h-32 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
-                </svg>
-              </div>
+            <div className="absolute top-8 left-8 w-56 h-72 border-4 border-folder-dark shadow-lg overflow-hidden">
+              <img 
+                src={portraitImage} 
+                alt="Adam Levinson" 
+                className="w-full h-full object-cover"
+              />
             </div>
             
             {/* Mission Select Title */}
-            <div className="mt-64">
+            <div className="mt-80 md:mt-96">
               <h1 className="text-2xl md:text-3xl font-retro mb-12 text-text-dark">
                 SELECT MISSION
               </h1>
