@@ -25,16 +25,16 @@ export const MainMenu = () => {
             </div>
 
             {/* Photo Container */}
-            <div className="absolute top-8 left-8 w-56 h-72 border-4 border-folder-dark shadow-lg overflow-hidden">
+            <div className="absolute top-8 left-8 w-48 h-48 border-4 border-folder-dark shadow-lg overflow-hidden">
               <img 
                 src={portraitImage} 
                 alt="Adam Levinson" 
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-top"
               />
             </div>
             
             {/* Mission Select Title */}
-            <div className="mt-80 md:mt-96">
+            <div className="mt-64">
               <h1 className="text-2xl md:text-3xl font-retro mb-12 text-text-dark">
                 SELECT MISSION
               </h1>
