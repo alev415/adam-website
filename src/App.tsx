@@ -15,17 +15,19 @@ function App() {
   }
 
   return (
-    <Router>
-      <AnimatePresence mode="wait">
-        <Routes>
-          <Route path="/" element={<MainMenu />} />
-          <Route path="/experience" element={<Experience />} />
-          <Route path="/work" element={<Work />} />
-          <Route path="/writing" element={<Writing />} />
-          <Route path="*" element={<Navigate to="/" replace />} />
-        </Routes>
-      </AnimatePresence>
-    </Router>
+    <div className="w-screen h-screen overflow-x-hidden">
+      <Router>
+        <AnimatePresence mode="wait">
+          <Routes>
+            <Route path="/" element={<MainMenu />} />
+            <Route path="/experience" element={<Experience />} />
+            <Route path="/work" element={<Work />} />
+            <Route path="/writing" element={<Writing />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </Routes>
+        </AnimatePresence>
+      </Router>
+    </div>
   );
 }
 
