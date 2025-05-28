@@ -17,7 +17,7 @@ export const FolderLayout = ({ children, title }: FolderLayoutProps) => {
       exit={{ opacity: 0 }}
       className="min-h-screen bg-black flex items-center justify-center p-4"
     >
-      <div className="w-full max-w-5xl">
+      <div className="w-full max-w-4xl mx-auto relative">
         {/* Main Folder */}
         <div className="bg-folder-dark min-h-screen md:min-h-0 md:h-auto relative">
           <div className="border-0 md:border-2 border-text-dark bg-folder-brown bg-folder-texture bg-folder-pattern p-4 md:p-6 relative min-h-screen md:min-h-[600px]">
