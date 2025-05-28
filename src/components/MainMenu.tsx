@@ -79,7 +79,7 @@ export const MainMenu = () => {
             <motion.div
               onClick={() => navigate('/')}
               whileHover={{ x: -4 }}
-              className="hidden md:flex absolute -right-20 top-8 w-20 h-28 bg-folder-brown border-t-2 border-r-2 border-b-2 border-text-dark items-center justify-center cursor-pointer hover:bg-folder-dark transition-colors duration-300"
+              className="hidden md:flex absolute -right-[5rem] top-8 w-20 h-28 bg-folder-brown border-t-2 border-r-2 border-b-2 border-text-dark items-center justify-center cursor-pointer hover:bg-folder-dark transition-colors duration-300"
             >
               <span className="font-retro text-xs text-text-dark transform -rotate-90">BACK</span>
             </motion.div>
