@@ -17,10 +17,10 @@ export const FolderLayout = ({ children, title }: FolderLayoutProps) => {
       exit={{ opacity: 0 }}
       className="min-h-screen bg-black flex"
     >
-      <div className="w-full">
+      <div className="w-full relative">
         {/* Main Folder */}
         <div className="bg-folder-dark min-h-screen md:min-h-0 md:h-auto md:p-1">
-          <div className="border-0 md:border-2 border-text-dark bg-folder-brown bg-folder-texture bg-folder-pattern p-4 md:p-8 relative min-h-screen md:min-h-[600px] md:m-8">
+          <div className="border-0 md:border-2 border-text-dark bg-folder-brown bg-folder-texture bg-folder-pattern p-4 md:p-6 relative min-h-screen md:min-h-[600px] md:mx-4 md:my-8">
             {/* Top Secret Stamp */}
             <div className="absolute top-8 right-8 transform rotate-[-12deg] text-stamp-red font-retro">
               <div className="border-4 border-stamp-red px-4 py-2">
@@ -46,7 +46,7 @@ export const FolderLayout = ({ children, title }: FolderLayoutProps) => {
             <motion.div
               onClick={() => navigate('/')}
               whileHover={{ x: -4 }}
-              className="hidden md:flex absolute -right-20 top-8 w-20 h-28 bg-folder-brown border-t-2 border-r-2 border-b-2 border-text-dark items-center justify-center cursor-pointer hover:bg-folder-dark transition-colors duration-300"
+              className="hidden md:flex absolute -right-12 top-8 w-12 h-28 bg-folder-brown border-t-2 border-r-2 border-b-2 border-text-dark items-center justify-center cursor-pointer hover:bg-folder-dark transition-colors duration-300"
             >
               <span className="font-retro text-xs text-text-dark transform -rotate-90">BACK</span>
             </motion.div>
