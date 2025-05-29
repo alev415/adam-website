@@ -160,7 +160,7 @@ export const Work = () => {
         {
           title: "Results and Impact",
           description: "The experiment delivered clear and statistically significant results. Average minutes consumed per session increased from 12.4 to 13.61, a 9.8 percent lift, with a p-value of 0.0000003. Learning days, defined as the number of distinct days a user engaged with course content, increased from 0.34 to 0.36, representing a 7.3 percent lift, with a p-value of 0.0000000001. These results gave us strong confidence to explore expanding the feature to Android and web as part of our broader engagement strategy.",
-          imageSrc: "", // Add image path
+          imageSrc: "/adam-website/images/learning-reminders.png",
           tags: ["Analytics", "User Engagement", "Product Impact"]
         }
       ]
