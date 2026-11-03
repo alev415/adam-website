@@ -1,7 +1,6 @@
 /// <reference types="react" />
 import React, { ReactNode } from 'react';
 import { motion } from 'framer-motion';
-import { Link, useNavigate } from 'react-router-dom';
 
 interface FolderLayoutProps {
   children: ReactNode;
@@ -9,7 +8,6 @@ interface FolderLayoutProps {
 }
 
 export const FolderLayout = ({ children, title }: FolderLayoutProps) => {
-  const navigate = useNavigate();
 
   return (
     <motion.div
@@ -29,8 +27,6 @@ export const FolderLayout = ({ children, title }: FolderLayoutProps) => {
               </div>
             </div>
 
-            <Link to="/" className="inline-block py-2 text-text-dark underline md:hidden">&lt; Back to missions</Link>
-
             {/* Content */}
             <div className="mt-24">
               <h1 className="text-2xl md:text-3xl font-retro mb-12 text-text-dark">
@@ -45,16 +41,7 @@ export const FolderLayout = ({ children, title }: FolderLayoutProps) => {
               CLEARANCE LEVEL: TOP SECRET
             </div>
 
-            {/* Desktop Folder Tab - Hidden on mobile */}
-            <motion.button
-              type="button"
-              aria-label="Back to missions"
-              onClick={() => navigate('/')}
-              whileHover={{ x: -4 }}
-              className="hidden md:flex absolute -right-20 top-8 w-20 h-28 bg-folder-brown border-t-2 border-r-2 border-b-2 border-text-dark items-center justify-center cursor-pointer hover:bg-folder-dark transition-colors duration-300"
-            >
-              <span className="font-retro text-xs text-text-dark transform -rotate-90">BACK</span>
-            </motion.button>
+
           </div>
         </div>
       </div>

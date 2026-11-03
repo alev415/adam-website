@@ -6,6 +6,7 @@ import { MainMenu } from './components/MainMenu';
 import { Experience } from './components/Experience';
 import { Work } from './components/Work';
 import { Writing } from './components/Writing';
+import { FolderNavigation } from './components/FolderNavigation';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -24,6 +25,7 @@ function App() {
     <div className="min-h-screen w-full bg-folder-dark">
       <Router>
         <ScrollToTop />
+        <FolderNavigation />
         <AnimatePresence mode="wait">
           <Routes>
             <Route path="/" element={<MainMenu />} />
