@@ -96,39 +96,6 @@ const CompanySection: React.FC<CompanySectionProps> = ({ company, summary, proje
 export const Work = () => {
   const companies: CompanySectionProps[] = [
     {
-      company: "ROO",
-      summary: {
-        title: "From product strategy to shipped features with coding agents",
-        description: "As Staff Product Manager for Hospitals and Experience, I paired product leadership with hands-on implementation. Using coding agents, I independently shipped features across the hospital experience and internal tools, including dark mode and review flows designed to strengthen feedback loops between hospitals and veterinarians."
-      },
-      projects: [
-        {
-          title: "Review Prompts and Feedback Loops",
-          role: "Product strategy and agent-assisted implementation",
-          description: "Built review prompts into the hospital dashboard to make outstanding feedback visible and give hospital users a clear next step. The experience encourages timely reviews after shifts, helping capture feedback on great experiences and informing future matches.",
-          imageSrc: `${import.meta.env.BASE_URL}images/roo-review-prompts.png`,
-          imageCaption: "Hospital dashboard prompt encouraging reviews within 30 days.",
-          tags: ["Coding Agents", "Hospital Experience", "Feedback Loops"]
-        },
-        {
-          title: "Rating and Review Flows",
-          role: "Product strategy and agent-assisted implementation",
-          description: "Implemented rating and review flows to help hospitals and veterinarians share feedback. Shift-level ratings and actionable review controls make feedback easier to find and contribute, supporting better feedback loops across the marketplace.",
-          imageSrc: `${import.meta.env.BASE_URL}images/roo-rating-flows.png`,
-          imageCaption: "Shift-level ratings and thumbs-up / thumbs-down review controls.",
-          tags: ["Coding Agents", "Reviews", "Marketplace", "UX"]
-        },
-        {
-          title: "Dark Mode and Admin Tools",
-          role: "Hands-on implementation with coding agents",
-          description: "Independently implemented dark mode and improvements to internal admin tools using coding agents. This work brought hands-on engineering execution into my product practice, allowing me to ship focused improvements directly.",
-          imageSrc: `${import.meta.env.BASE_URL}images/roo-dark-mode-admin.png`,
-          imageCaption: "Dark mode and admin navigation. Hospital contact records omitted.",
-          tags: ["Coding Agents", "Dark Mode", "Internal Tools"]
-        }
-      ]
-    },
-    {
       company: "HINGE HEALTH",
       summary: {
         title: "Driving over $30 million in incremental revenue through product-led growth",
@@ -180,6 +147,39 @@ export const Work = () => {
           imageViewport: { viewBox: "257 256 902 842", width: 1415, height: 1354 },
           imageCaption: "AI chatbot interface for joint and muscle pain education.",
           tags: ["AI/ML", "Healthcare", "Chatbot", "User Experience"]
+        }
+      ]
+    },
+    {
+      company: "ROO",
+      summary: {
+        title: "From product strategy to shipped features with coding agents",
+        description: "As Staff Product Manager for Hospitals and Experience, I paired product leadership with hands-on implementation. Using coding agents, I independently shipped features across the hospital experience and internal tools, including dark mode and review flows designed to strengthen feedback loops between hospitals and veterinarians."
+      },
+      projects: [
+        {
+          title: "Review Prompts and Feedback Loops",
+          role: "Product strategy and agent-assisted implementation",
+          description: "Built review prompts into the hospital dashboard to make outstanding feedback visible and give hospital users a clear next step. The experience encourages timely reviews after shifts, helping capture feedback on great experiences and informing future matches.",
+          imageSrc: `${import.meta.env.BASE_URL}images/roo-review-prompts.png`,
+          imageCaption: "Hospital dashboard prompt encouraging reviews within 30 days.",
+          tags: ["Coding Agents", "Hospital Experience", "Feedback Loops"]
+        },
+        {
+          title: "Rating and Review Flows",
+          role: "Product strategy and agent-assisted implementation",
+          description: "Implemented rating and review flows to help hospitals and veterinarians share feedback. Shift-level ratings and actionable review controls make feedback easier to find and contribute, supporting better feedback loops across the marketplace.",
+          imageSrc: `${import.meta.env.BASE_URL}images/roo-rating-flows.png`,
+          imageCaption: "Shift-level ratings and thumbs-up / thumbs-down review controls.",
+          tags: ["Coding Agents", "Reviews", "Marketplace", "UX"]
+        },
+        {
+          title: "Dark Mode and Admin Tools",
+          role: "Hands-on implementation with coding agents",
+          description: "Independently implemented dark mode and improvements to internal admin tools using coding agents. This work brought hands-on engineering execution into my product practice, allowing me to ship focused improvements directly.",
+          imageSrc: `${import.meta.env.BASE_URL}images/roo-dark-mode-admin.png`,
+          imageCaption: "Dark mode and admin navigation. Hospital contact records omitted.",
+          tags: ["Coding Agents", "Dark Mode", "Internal Tools"]
         }
       ]
     },
