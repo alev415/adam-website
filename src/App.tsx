@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { HashRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
-import { AnimatePresence } from 'framer-motion';
 import { LoadingScreen } from './components/LoadingScreen';
 import { MainMenu } from './components/MainMenu';
 import { Experience } from './components/Experience';
@@ -26,7 +25,6 @@ function App() {
       <Router>
         <ScrollToTop />
         <FolderNavigation />
-        <AnimatePresence mode="wait">
           <Routes>
             <Route path="/" element={<MainMenu />} />
             <Route path="/experience" element={<Experience />} />
@@ -34,7 +32,6 @@ function App() {
             <Route path="/writing" element={<Writing />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
-        </AnimatePresence>
       </Router>
     </div>
   );

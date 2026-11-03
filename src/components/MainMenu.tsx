@@ -6,10 +6,7 @@ import portraitImage from '../assets/images/portrait.jpg';
 export const MainMenu = () => {
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
+    <div
       className="min-h-screen bg-folder-dark flex"
     >
       <div className="w-full min-w-0">
@@ -78,6 +75,6 @@ export const MainMenu = () => {
           </div>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }; 

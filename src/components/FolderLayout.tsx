@@ -1,6 +1,5 @@
 /// <reference types="react" />
 import React, { ReactNode } from 'react';
-import { motion } from 'framer-motion';
 
 interface FolderLayoutProps {
   children: ReactNode;
@@ -10,10 +9,7 @@ interface FolderLayoutProps {
 export const FolderLayout = ({ children, title }: FolderLayoutProps) => {
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
+    <div
       className="min-h-screen bg-folder-dark flex"
     >
       <div className="w-full min-w-0">
@@ -45,6 +41,6 @@ export const FolderLayout = ({ children, title }: FolderLayoutProps) => {
           </div>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }; 
