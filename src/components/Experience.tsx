@@ -5,19 +5,35 @@ export const Experience = () => {
   return (
     <FolderLayout title="EXPERIENCE">
       <div className="space-y-12">
+        {/* Roo */}
+        <div className="border-l-4 border-folder-dark pl-6">
+          <h2 className="font-retro text-xl text-text-dark mb-2">Roo</h2>
+          <div>
+            <h3 className="font-retro text-lg text-text-dark mb-1">Staff Product Manager, Hospitals and Experience</h3>
+            <h4 className="font-retro text-sm text-text-dark opacity-75 mb-4">June 2025 - Present</h4>
+            <ul className="space-y-2 text-text-dark">
+              <li className="font-retro text-xs">• Drove 20% growth in hospitals on the platform in the first year</li>
+              <li className="font-retro text-xs">• Rebuilt the go-to-market motion across B2B sales, Google Ads, SEO, and referral programs</li>
+              <li className="font-retro text-xs">• Rebuilt core product flows to drive more shift postings, better hospital-veterinarian matches, and higher confirmation rates</li>
+              <li className="font-retro text-xs">• Launched the mobile app for hospital users</li>
+              <li className="font-retro text-xs">• Independently shipped features using coding agents, including dark mode, admin tool improvements, and review flows to strengthen feedback loops for hospitals and veterinarians</li>
+            </ul>
+          </div>
+        </div>
+
         {/* Hinge Health */}
         <div className="border-l-4 border-folder-dark pl-6">
           <h2 className="font-retro text-xl text-text-dark mb-2">Hinge Health, Inc.</h2>
           
           <div className="mb-8">
             <h3 className="font-retro text-lg text-text-dark mb-1">Head of Growth Product</h3>
-            <h4 className="font-retro text-sm text-text-dark opacity-75 mb-4">January 2023 - Present</h4>
+            <h4 className="font-retro text-sm text-text-dark opacity-75 mb-4">January 2023 - June 2025</h4>
             <ul className="space-y-2 text-text-dark">
-              <li className="font-retro text-xs">• Oversee 6 product and engineering pods managing marketing technology, website, and new user growth</li>
+              <li className="font-retro text-xs">• Oversaw 6 product and engineering pods managing marketing technology, website, and new user growth</li>
               <li className="font-retro text-xs">• Implemented growth strategies driving 33% YoY revenue increase in 2024</li>
               <li className="font-retro text-xs">• Led product strategy generating $20M incremental revenue in 2023</li>
-              <li className="font-retro text-xs">• Manage Healthcare Data Platform and Partnership Integration Pod</li>
-              <li className="font-retro text-xs">• Direct management of 6 product managers and 2 designers</li>
+              <li className="font-retro text-xs">• Managed Healthcare Data Platform and Partnership Integration Pod</li>
+              <li className="font-retro text-xs">• Directly managed 6 product managers and 2 designers</li>
             </ul>
           </div>
 
