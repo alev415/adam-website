@@ -14,6 +14,10 @@ interface ProjectProps {
 
 interface CompanySectionProps {
   company: string;
+  context: string;
+  role: string;
+  period: string;
+  impact: { value: string; label: string }[];
   summary: {
     title: string;
     description: string;
@@ -21,13 +25,14 @@ interface CompanySectionProps {
   projects: ProjectProps[];
 }
 
-const Project: React.FC<ProjectProps> = ({ title, role, description, imageSrc, imageCaption, imageViewport, tags }) => (
-  <div className="border-l-4 border-folder-dark pl-6 mb-16">
+const Project: React.FC<ProjectProps & { number: number }> = ({ number, title, role, description, imageSrc, imageCaption, imageViewport, tags }) => (
+  <article className="portfolio-project">
     <div className={`grid gap-8 ${imageSrc ? 'md:grid-cols-2' : ''}`}>
       {/* Content Section */}
       <div>
-        <h2 className="font-retro text-lg text-text-dark mb-2">{title}</h2>
-        {role && <h3 className="font-retro text-sm text-text-dark opacity-75 mb-4">{role}</h3>}
+        <div className="portfolio-project-number">PROJECT {String(number).padStart(2, '0')}</div>
+        <h3 className="font-retro text-xl text-text-dark mb-3">{title}</h3>
+        {role && <p className="portfolio-project-role">{role}</p>}
         <p className="font-retro text-xs text-text-dark mb-4 whitespace-pre-line">
           {description}
         </p>
@@ -35,7 +40,7 @@ const Project: React.FC<ProjectProps> = ({ title, role, description, imageSrc, i
           {tags.map((tag, index) => (
             <span
               key={index}
-              className="font-retro text-xs bg-folder-dark px-2 py-1 text-text-dark"
+              className="portfolio-tag"
             >
               {tag}
             </span>
@@ -65,7 +70,7 @@ const Project: React.FC<ProjectProps> = ({ title, role, description, imageSrc, i
             loading="lazy"
             src={imageSrc}
             alt={imageCaption || title}
-            className="block w-full h-auto object-contain"
+            className="block w-full h-auto max-h-80 object-contain"
           />
           )}
           </a>
@@ -73,30 +78,53 @@ const Project: React.FC<ProjectProps> = ({ title, role, description, imageSrc, i
         {imageCaption && <figcaption className="mt-3 text-sm text-text-dark">{imageCaption} Click to enlarge.</figcaption>}
       </figure>}
     </div>
-  </div>
+  </article>
 );
 
-const CompanySection: React.FC<CompanySectionProps> = ({ company, summary, projects }) => (
-  <div className="mb-24">
-    <div className="border-b-4 border-folder-dark mb-12">
-      <h2 className="font-retro text-2xl text-text-dark mb-8">{company}</h2>
-      <div className="border-l-4 border-folder-dark pl-6 mb-12">
-        <h3 className="font-retro text-xl text-text-dark mb-4">{summary.title}</h3>
-        <p className="font-retro text-xs text-text-dark whitespace-pre-line">
-          {summary.description}
-        </p>
+const CompanySection: React.FC<CompanySectionProps & { chapter: number }> = ({ company, context, role, period, impact, summary, projects, chapter }) => (
+  <section className="portfolio-company" aria-labelledby={`company-${chapter}`}>
+    <header className="portfolio-company-header">
+      <div className="portfolio-company-meta">
+        <span>CAREER CHAPTER {String(chapter).padStart(2, '0')}</span>
+        <span>{period}</span>
       </div>
+      <h2 id={`company-${chapter}`} className="portfolio-company-name">{company}</h2>
+      <p className="portfolio-company-role">{role}</p>
+      <p className="portfolio-company-context">{context}</p>
+      <div className="portfolio-overview">
+        <p className="portfolio-label">THE MISSION</p>
+        <h3 className="portfolio-mission">{summary.title}</h3>
+        <p className="text-text-dark">{summary.description}</p>
+      </div>
+      <dl className="portfolio-impact" aria-label={`${company} impact highlights`}>
+        {impact.map(item => (
+          <div key={item.label}>
+            <dt>{item.label}</dt>
+            <dd>{item.value}</dd>
+          </div>
+        ))}
+      </dl>
+    </header>
+    <div className="portfolio-projects">
+      <div className="portfolio-work-heading">
+        <h3>SELECTED WORK AT {company}</h3>
+        <span>{projects.length} projects</span>
+      </div>
+      {projects.map((project, index) => (
+        <Project key={project.title} number={index + 1} {...project} />
+      ))}
     </div>
-    {projects.map((project, index) => (
-      <Project key={index} {...project} />
-    ))}
-  </div>
+  </section>
 );
 
 export const Work = () => {
   const companies: CompanySectionProps[] = [
     {
       company: "HINGE HEALTH",
+      context: "Virtual physical therapy",
+      role: "Growth Product Leadership",
+      period: "2021 - 2025",
+      impact: [{"value": "$30M+", "label": "Incremental revenue"}, {"value": "Nearly 100", "label": "Website experiments"}, {"value": "6", "label": "Product and engineering pods"}],
       summary: {
         title: "Driving over $30 million in incremental revenue through product-led growth",
         description: "At Hinge Health, a leading virtual physical therapy solution, I helped expand the company's member acquisition strategy beyond its traditional employer-based model. When I joined, the company had no organic or paid acquisition channels. Over my tenure, I built and scaled new growth engines—organic, paid, and referral—driving tens of millions in annual revenue. Along the way, we launched nearly 100 website experiments, created foundational systems for high-velocity execution, and introduced AI-driven product experiences to personalize the member journey."
@@ -152,9 +180,13 @@ export const Work = () => {
     },
     {
       company: "ROO",
+      context: "Veterinary staffing marketplace",
+      role: "Staff Product Manager, Hospitals and Experience",
+      period: "2025 - Present",
+      impact: [{"value": "20%", "label": "Hospital growth in the first year"}, {"value": "Launched", "label": "Hospital mobile app"}, {"value": "Hands-on", "label": "Features shipped with coding agents"}],
       summary: {
-        title: "From product strategy to shipped features with coding agents",
-        description: "As Staff Product Manager for Hospitals and Experience, I paired product leadership with hands-on implementation. Using coding agents, I independently shipped features across the hospital experience and internal tools, including dark mode and review flows designed to strengthen feedback loops between hospitals and veterinarians."
+        title: "Growing the hospital marketplace, from strategy to shipped product",
+        description: "At Roo, I led the hospital experience and acquisition strategy, driving 20% hospital growth in my first year. I rebuilt the go-to-market motion and core product flows, and launched a mobile app for hospital users. Alongside this work, I used coding agents to independently ship dark mode, admin improvements, and review flows. The projects below highlight that hands-on implementation work."
       },
       projects: [
         {
@@ -185,6 +217,10 @@ export const Work = () => {
     },
     {
       company: "UDEMY",
+      context: "Online learning platform",
+      role: "Growth, Mobile, and Learner Engagement",
+      period: "2016 - 2021",
+      impact: [{"value": "+9.8%", "label": "Learning minutes"}, {"value": "+7.3%", "label": "Learning days"}, {"value": "iOS \u2192 Android", "label": "Reminders expanded across platforms"}],
       summary: {
         title: "Boosting engagement through timely nudges: Learning Reminders",
         description: "At Udemy, we launched a learning reminders feature to help students stay on track with their courses, particularly during brief periods of downtime. Our research showed that students valued Udemy as a productive alternative to entertainment apps, but many still struggled to return to courses consistently. Time constraints, rather than a lack of motivation, were the primary barrier. By introducing simple and well-timed push notifications, we aimed to re-engage learners and improve overall course consumption."
@@ -231,9 +267,10 @@ export const Work = () => {
 
   return (
     <FolderLayout title="PORTFOLIO">
-      <div>
+      <div className="portfolio-chapters">
+        <p className="portfolio-intro">Growth strategy, product leadership, and hands-on execution. Explore the mission, impact, and selected work from each chapter.</p>
         {companies.map((company, index) => (
-          <CompanySection key={index} {...company} />
+          <CompanySection key={company.company} chapter={index + 1} {...company} />
         ))}
       </div>
     </FolderLayout>

@@ -93,3 +93,38 @@ body { margin: 0; overflow-wrap: anywhere; }
   .folder-navigation-tab.is-active { box-shadow: inset -4px 0 #a51c18; }
   .folder-navigation-back { margin-top: 10px; }
 }
+
+/* Company chapters keep context, impact, and supporting projects together. */
+.portfolio-intro { max-width: 760px; margin: -24px 0 48px; color: #514b42; }
+.portfolio-company { margin-bottom: 80px; border: 1px solid #a99a80; background: #f6efdf; box-shadow: 0 4px 0 #514b4212; }
+.portfolio-company:last-child { margin-bottom: 0; }
+.portfolio-company-header { padding: 24px; background: #e0cfad; border-top: 5px solid #514b42; }
+.portfolio-company-meta { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; font-size: 12px; font-weight: 600; letter-spacing: .1em; color: #655c4e; }
+.portfolio-company-name { margin: 20px 0 4px; font-size: clamp(28px, 4vw, 42px); line-height: 1.15; letter-spacing: .025em; color: #302c26; }
+.portfolio-company-role { margin: 8px 0 0; font-weight: 600; color: #302c26; }
+.portfolio-company-context { margin: 2px 0 24px; color: #655c4e; }
+.portfolio-overview { border-top: 1px solid #aa997a; padding-top: 24px; max-width: 900px; }
+.portfolio-label { color: #8d2822; font-size: 11px !important; letter-spacing: .12em; font-weight: 700; margin-bottom: 8px; }
+.portfolio-mission { color: #302c26; font-size: clamp(20px, 2.4vw, 26px); margin-bottom: 12px; }
+.portfolio-impact { display: grid; grid-template-columns: 1fr; gap: 0; margin-top: 28px; border: 1px solid #b5a486; background: #f6efdfb3; }
+.portfolio-impact > div { padding: 16px 20px; display: flex; flex-direction: column-reverse; gap: 4px; }
+.portfolio-impact > div + div { border-top: 1px solid #b5a486; }
+.portfolio-impact dt { color: #655c4e; font-size: 13px; }
+.portfolio-impact dd { color: #7e2822; font-weight: 700; font-size: 27px; line-height: 1.2; }
+.portfolio-projects { padding: 24px; }
+.portfolio-work-heading { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; padding-bottom: 18px; border-bottom: 1px solid #c8b99e; color: #514b42; }
+.portfolio-work-heading h3 { font-size: 12px; letter-spacing: .08em; }
+.portfolio-work-heading span { font-size: 12px; color: #766b59; }
+.portfolio-project { padding: 28px 0; border-bottom: 1px solid #d8cbb3; }
+.portfolio-project:last-child { border-bottom: 0; padding-bottom: 0; }
+.portfolio-project-number { font-size: 11px; letter-spacing: .1em; color: #8d2822; font-weight: 700; margin-bottom: 10px; }
+.portfolio-project-role { font-size: 13px !important; color: #655c4e; margin-bottom: 16px; }
+.portfolio-tag { font-size: 11px; border: 1px solid #c8b99e; padding: 3px 8px; color: #655c4e; background: #e9deca; }
+.portfolio-project figcaption { color: #766b59; font-size: 12px; line-height: 1.6; }
+@media (min-width: 768px) {
+  .portfolio-company-header { padding: 32px; }
+  .portfolio-projects { padding: 24px 32px 32px; }
+  .portfolio-impact { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .portfolio-impact > div + div { border-top: 0; border-left: 1px solid #b5a486; }
+  .portfolio-project { padding: 36px 0; }
+}
