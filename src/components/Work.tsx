@@ -8,6 +8,7 @@ interface ProjectProps {
   description: string;
   imageSrc: string;
   imageCaption?: string;
+  imageViewport?: { viewBox: string; width: number; height: number };
   tags: string[];
 }
 
@@ -20,7 +21,7 @@ interface CompanySectionProps {
   projects: ProjectProps[];
 }
 
-const Project: React.FC<ProjectProps> = ({ title, role, description, imageSrc, imageCaption, tags }) => (
+const Project: React.FC<ProjectProps> = ({ title, role, description, imageSrc, imageCaption, imageViewport, tags }) => (
   <div className="border-l-4 border-folder-dark pl-6 mb-16">
     <div className={`grid gap-8 ${imageSrc ? 'md:grid-cols-2' : ''}`}>
       {/* Content Section */}
@@ -43,19 +44,30 @@ const Project: React.FC<ProjectProps> = ({ title, role, description, imageSrc, i
       </div>
 
       {/* Image Section */}
-      {imageSrc && <figure className="relative group">
+      {imageSrc && <figure className="relative group min-w-0 self-start">
         <motion.div
-          className="border-4 border-folder-dark overflow-hidden bg-folder-dark w-full mx-auto"
+          className="border-4 border-folder-dark overflow-hidden bg-transparent w-full mx-auto"
           whileHover={{ scale: 1.02 }}
           transition={{ duration: 0.2 }}
         >
           <a href={imageSrc} target="_blank" rel="noreferrer" aria-label={`View ${title} image at full size`}>
+          {imageViewport ? (
+            <svg
+              viewBox={imageViewport.viewBox}
+              role="img"
+              aria-label={imageCaption || title}
+              className="block w-full h-auto"
+            >
+              <image href={imageSrc} width={imageViewport.width} height={imageViewport.height} />
+            </svg>
+          ) : (
           <img
             loading="lazy"
             src={imageSrc}
             alt={imageCaption || title}
-            className="w-full h-full object-contain"
+            className="block w-full h-auto object-contain"
           />
+          )}
           </a>
         </motion.div>
         {imageCaption && <figcaption className="mt-3 text-sm text-text-dark">{imageCaption} Click to enlarge.</figcaption>}
@@ -94,6 +106,7 @@ export const Work = () => {
           title: "Design System for Growth",
           description: "To enable fast, high-quality experimentation, we built a modular web design system from the ground up. This system standardized components and templates across pages, significantly accelerating our ability to launch A/B tests and landing pages. The result was faster iteration cycles, consistent UI, and greater collaboration between design, engineering, and marketing teams.",
           imageSrc: `${import.meta.env.BASE_URL}images/hinge-design-system.png`,
+          imageViewport: { viewBox: "256 256 798 692", width: 1310, height: 1204 },
           imageCaption: "Reusable landing page components and growth design system.",
           tags: ["Design System", "Component Library", "Experimentation", "UI/UX"]
         },
@@ -101,6 +114,7 @@ export const Work = () => {
           title: "A/B Testing for Conversion Optimization",
           description: "We implemented a robust A/B testing framework to drive conversion rate improvements across the web funnel. These experiments focused on messaging, design, and call-to-action optimization—ultimately driving more high-intent visitors to complete the signup flow. This experimentation engine played a key role in expanding our member base and refining our understanding of user behavior.",
           imageSrc: `${import.meta.env.BASE_URL}images/hinge-conversion-testing.png`,
+          imageViewport: { viewBox: "256 256 1195 821", width: 1707, height: 1333 },
           imageCaption: "Hinge Health acquisition page and coverage-check experience.",
           tags: ["A/B Testing", "CRO", "Analytics", "User Behavior"]
         },
@@ -114,6 +128,7 @@ export const Work = () => {
           title: "SEO and Paid Acquisition Channels",
           description: "Starting from scratch, I built and scaled both SEO and paid acquisition channels. For SEO, we created educational content, landing pages, and technical infrastructure to improve our search visibility and attract organic traffic. For paid, we tested and optimized across Google, Meta, and other channels to acquire users efficiently. These channels became critical growth levers, generating tens of millions in new revenue.",
           imageSrc: `${import.meta.env.BASE_URL}images/hinge-seo-content.png`,
+          imageViewport: { viewBox: "257 258 1153 920", width: 1667, height: 1434 },
           imageCaption: "Search-focused exercise content and conversion prompts.",
           tags: ["SEO", "Paid Acquisition", "Content Strategy", "Growth"]
         },
@@ -121,6 +136,7 @@ export const Work = () => {
           title: "Freemium Product Launch",
           description: "To expand access and drive top-of-funnel acquisition, we launched a freemium offering that allowed prospective members to explore the product before enrolling. This initiative led to a 10% increase in accepted members and served as a scalable way to reduce acquisition friction while still delivering value upfront.",
           imageSrc: `${import.meta.env.BASE_URL}images/hinge-freemium.png`,
+          imageViewport: { viewBox: "256 256 832 970", width: 1344, height: 1482 },
           imageCaption: "Free exercise content with pathways to covered care.",
           tags: ["Product Strategy", "Freemium", "User Acquisition", "Conversion"]
         },
@@ -128,6 +144,7 @@ export const Work = () => {
           title: "AI Chatbot for Injury Education",
           description: "We launched Hinge Health's first AI-powered chatbot to help prospective members better understand their pain and explore treatment options. The chatbot leveraged leading LLMs, evaluated for performance and compliance, and was one of the first HIPAA-compliant bots to go live in the healthcare space. It personalized education and triage at scale, improving the digital experience and driving conversion through helpful, interactive content.",
           imageSrc: `${import.meta.env.BASE_URL}images/hinge-ai-chatbot.png`,
+          imageViewport: { viewBox: "257 256 902 842", width: 1415, height: 1354 },
           imageCaption: "AI chatbot interface for joint and muscle pain education.",
           tags: ["AI/ML", "Healthcare", "Chatbot", "User Experience"]
         }
