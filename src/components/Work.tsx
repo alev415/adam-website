@@ -44,9 +44,9 @@ const Project: React.FC<ProjectProps> = ({ title, role, description, imageSrc, i
       </div>
 
       {/* Image Section */}
-      {imageSrc && <figure className="relative group min-w-0 self-start">
+      {imageSrc && <figure className="relative group min-w-0 self-start w-full max-w-[480px] justify-self-center">
         <motion.div
-          className="border-4 border-folder-dark overflow-hidden bg-transparent w-full mx-auto"
+          className="w-full"
           whileHover={{ scale: 1.02 }}
           transition={{ duration: 0.2 }}
         >
@@ -56,7 +56,7 @@ const Project: React.FC<ProjectProps> = ({ title, role, description, imageSrc, i
               viewBox={imageViewport.viewBox}
               role="img"
               aria-label={imageCaption || title}
-              className="block w-full h-auto"
+              className="block w-full h-auto max-h-80"
             >
               <image href={imageSrc} width={imageViewport.width} height={imageViewport.height} />
             </svg>
