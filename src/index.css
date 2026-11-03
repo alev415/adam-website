@@ -64,8 +64,56 @@ body { margin: 0; overflow-wrap: anywhere; }
 .folder-navigation-tab:disabled { opacity: .45; cursor: default; }
 .folder-navigation-back { background: #c8b79a; }
 @media (max-width: 767px) {
-  .folder-shell { padding-top: 76px; }
-  .folder-page { min-height: calc(100svh - 92px); }
+  .folder-shell { padding-top: 60px; }
+  .folder-page { min-height: calc(100svh - 76px); }
+  .folder-navigation {
+    top: 16px;
+    left: 16px;
+    right: 16px;
+    padding: 0;
+    gap: 0;
+    background: transparent;
+    transition: transform 160ms ease, opacity 160ms ease, visibility 160ms;
+  }
+  .folder-navigation::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 8px;
+    background: #e6d5b8;
+    border-left: 2px solid #333;
+    border-right: 2px solid #333;
+    pointer-events: none;
+  }
+  .folder-navigation-tab {
+    min-height: 44px;
+    border: 2px solid #333;
+    border-right-width: 0;
+    border-bottom: 0;
+    border-radius: 9px 9px 0 0;
+    box-shadow: none;
+    background: #d7c5a6;
+    font-size: clamp(8px, 2.3vw, 11px);
+    letter-spacing: 0;
+    white-space: nowrap;
+  }
+  .folder-navigation-tab:last-child { border-right-width: 2px; }
+  .folder-navigation-tab.is-active { background: #e6d5b8; }
+  .folder-navigation-tab:disabled { opacity: 1; color: #827762; background: #d7c5a6; }
+  .folder-navigation.is-scrolling {
+    transform: translateY(calc(-100% - 24px));
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+  .folder-navigation:has(:focus-visible) {
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
 }
 @media (min-width: 768px) {
   .folder-navigation {
@@ -127,4 +175,8 @@ body { margin: 0; overflow-wrap: anywhere; }
   .portfolio-impact { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .portfolio-impact > div + div { border-top: 0; border-left: 1px solid #b5a486; }
   .portfolio-project { padding: 36px 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .folder-navigation { transition: none; }
 }
