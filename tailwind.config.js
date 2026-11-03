@@ -16,7 +16,7 @@ export default {
         'bg-green': '#2f4f4f'
       },
       fontFamily: {
-        'retro': ['"Press Start 2P"', 'cursive'],
+        'retro': ['"Chakra Petch"', '"Trebuchet MS"', 'sans-serif'],
       },
       backgroundImage: {
         'folder-texture': 'linear-gradient(45deg, rgba(0, 0, 0, 0.02) 25%, transparent 25%), linear-gradient(-45deg, rgba(0, 0, 0, 0.02) 25%, transparent 25%), linear-gradient(45deg, transparent 75%, rgba(0, 0, 0, 0.02) 75%), linear-gradient(-45deg, transparent 75%, rgba(0, 0, 0, 0.02) 75%)',

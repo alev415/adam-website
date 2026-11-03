@@ -7,6 +7,7 @@ interface ProjectProps {
   role?: string;
   description: string;
   imageSrc: string;
+  imageCaption?: string;
   tags: string[];
 }
 
@@ -19,9 +20,9 @@ interface CompanySectionProps {
   projects: ProjectProps[];
 }
 
-const Project: React.FC<ProjectProps> = ({ title, role, description, imageSrc, tags }) => (
+const Project: React.FC<ProjectProps> = ({ title, role, description, imageSrc, imageCaption, tags }) => (
   <div className="border-l-4 border-folder-dark pl-6 mb-16">
-    <div className="grid md:grid-cols-2 gap-8">
+    <div className={`grid gap-8 ${imageSrc ? 'md:grid-cols-2' : ''}`}>
       {/* Content Section */}
       <div>
         <h2 className="font-retro text-lg text-text-dark mb-2">{title}</h2>
@@ -31,8 +32,8 @@ const Project: React.FC<ProjectProps> = ({ title, role, description, imageSrc, t
         </p>
         <div className="flex flex-wrap gap-2">
           {tags.map((tag, index) => (
-            <span 
-              key={index} 
+            <span
+              key={index}
               className="font-retro text-xs bg-folder-dark px-2 py-1 text-text-dark"
             >
               {tag}
@@ -42,22 +43,23 @@ const Project: React.FC<ProjectProps> = ({ title, role, description, imageSrc, t
       </div>
 
       {/* Image Section */}
-      <div className="relative group">
-        <motion.div 
-          className="border-4 border-folder-dark overflow-hidden bg-folder-dark max-w-[400px] mx-auto"
+      {imageSrc && <figure className="relative group">
+        <motion.div
+          className="border-4 border-folder-dark overflow-hidden bg-folder-dark w-full mx-auto"
           whileHover={{ scale: 1.02 }}
           transition={{ duration: 0.2 }}
         >
-          <img 
-            src={imageSrc} 
-            alt={title} 
+          <a href={imageSrc} target="_blank" rel="noreferrer" aria-label={`View ${title} image at full size`}>
+          <img
+            loading="lazy"
+            src={imageSrc}
+            alt={imageCaption || title}
             className="w-full h-full object-contain"
           />
-          <div className="absolute top-0 left-0 bg-black bg-opacity-50 text-spy-accent font-retro text-xs p-2">
-            CONFIDENTIAL
-          </div>
+          </a>
         </motion.div>
-      </div>
+        {imageCaption && <figcaption className="mt-3 text-sm text-text-dark">{imageCaption} Click to enlarge.</figcaption>}
+      </figure>}
     </div>
   </div>
 );
@@ -136,31 +138,36 @@ export const Work = () => {
         {
           title: "User Research and Problem Framing",
           description: "We began by reviewing existing research and synthesizing user insights to define the core problem. Students consistently told us they viewed Udemy as a valuable use of their time, especially when compared to social or entertainment apps. However, many users purchased multiple courses and failed to complete them, often citing a lack of time. This issue was particularly pronounced for professional learners who needed to keep up with evolving skills to remain competitive or transition into new roles.",
-          imageSrc: "", // Add image path
+          imageSrc: `${import.meta.env.BASE_URL}images/udemy-user-research.png`,
+          imageCaption: "Research findings on learner motivation and time barriers (PDF page 4).",
           tags: ["User Research", "Problem Discovery", "Qualitative Analysis"]
         },
         {
           title: "Competitive and Opportunity Analysis",
           description: "We conducted a competitive analysis across learning, productivity, and behavior-driven apps to explore how others kept users engaged. From this work, we identified a strong opportunity to introduce timely nudges during moments when users were likely to have short windows of availability. The goal was to meet learners where they were and encourage brief, consistent engagement without overwhelming them.",
-          imageSrc: "/adam-website/images/competitive-analysis.png",
+          imageSrc: `${import.meta.env.BASE_URL}images/udemy-competitive-analysis.png`,
+          imageCaption: "Competitive landscape and reminder examples (PDF page 12).",
           tags: ["Competitive Analysis", "Market Research", "Product Strategy"]
         },
         {
           title: "Scope Refinement and Design",
           description: "To move quickly and reduce complexity, we focused our initial experiment on iOS only. Supporting web and Android would have required significant backend, design, and frontend work. By narrowing the scope to native iOS notifications, we were able to move forward without introducing new infrastructure dependencies. We created wireframes, built prototypes, and finalized high-fidelity designs that matched Udemy's mobile interaction patterns and visual language.",
-          imageSrc: "", // Add image path
+          imageSrc: `${import.meta.env.BASE_URL}images/udemy-purchase-flow.png`,
+          imageCaption: "MVP purchase flow and reminder setup designs (PDF page 17).",
           tags: ["Product Design", "MVP", "iOS", "UX Patterns"]
         },
         {
           title: "Build and Launch",
           description: "With a dedicated iOS engineer on the team, we developed the feature using local device scheduling to manage reminders. This approach allowed us to launch and test quickly without needing backend coordination. We conducted QA, prepared the experiment, and launched an A/B test focused exclusively on iOS users to validate the concept and measure impact.",
-          imageSrc: "", // Add image path
+          imageSrc: `${import.meta.env.BASE_URL}images/udemy-return-flow.png`,
+          imageCaption: "Triggered reminder notification and return to My Courses (PDF page 20).",
           tags: ["iOS Development", "QA", "A/B Testing"]
         },
         {
           title: "Results and Impact",
           description: "The experiment delivered clear and statistically significant results. Average minutes consumed per session increased from 12.4 to 13.61, a 9.8 percent lift, with a p-value of 0.0000003. Learning days, defined as the number of distinct days a user engaged with course content, increased from 0.34 to 0.36, representing a 7.3 percent lift, with a p-value of 0.0000000001. These results gave us strong confidence to explore expanding the feature to Android and web as part of our broader engagement strategy.",
-          imageSrc: "/images/udemy-reminders-settings.png",
+          imageSrc: `${import.meta.env.BASE_URL}images/udemy-results.png`,
+          imageCaption: "Experiment results: minutes consumed and learning days (PDF page 27).",
           tags: ["Analytics", "User Engagement", "Product Impact"]
         }
       ]
@@ -176,4 +183,4 @@ export const Work = () => {
       </div>
     </FolderLayout>
   );
-}; 
+};
