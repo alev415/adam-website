@@ -1,11 +1,17 @@
-import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { HashRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import { LoadingScreen } from './components/LoadingScreen';
 import { MainMenu } from './components/MainMenu';
 import { Experience } from './components/Experience';
 import { Work } from './components/Work';
 import { Writing } from './components/Writing';
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
+  return null;
+}
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -15,8 +21,9 @@ function App() {
   }
 
   return (
-    <div className="w-screen h-screen overflow-x-hidden">
+    <div className="min-h-screen w-full bg-folder-dark">
       <Router>
+        <ScrollToTop />
         <AnimatePresence mode="wait">
           <Routes>
             <Route path="/" element={<MainMenu />} />

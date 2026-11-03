@@ -20,3 +20,11 @@
   h4.font-retro { font-size: 0.95rem; }
   a:focus-visible, button:focus-visible { outline: 3px solid #cc0000; outline-offset: 5px; }
 }
+
+/* Let the document grow with its content rather than overflowing a fixed screen. */
+html, body, #root { min-height: 100%; background-color: #b4a89a; }
+body { margin: 0; overflow-wrap: anywhere; }
+.folder-page { min-height: calc(100svh - 2rem); }
+@media (min-width: 768px) {
+  .folder-page { min-height: calc(100svh - 4.5rem); }
+}
