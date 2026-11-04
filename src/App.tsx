@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useLayoutEffect, useState } from 'react';
 import { HashRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { LoadingScreen } from './components/LoadingScreen';
 import { MainMenu } from './components/MainMenu';
@@ -9,7 +9,7 @@ import { FolderNavigation } from './components/FolderNavigation';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
-  useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
+  useLayoutEffect(() => { window.scrollTo({ top: 0, left: 0, behavior: 'instant' }); }, [pathname]);
   return null;
 }
 

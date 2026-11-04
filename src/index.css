@@ -177,3 +177,11 @@ body { margin: 0; overflow-wrap: anywhere; }
 @media (prefers-reduced-motion: reduce) {
   .folder-navigation { transition: none; }
 }
+
+/* Reserve scrollbar space so tab changes do not shift the folder sideways. */
+html { scrollbar-gutter: stable; }
+/* Native SVG cursor keeps the crosshair centered on the actual click target. */
+@media (hover: hover) and (pointer: fine) {
+  html, body, body * { cursor: url('./assets/bullseye.svg') 16 16, crosshair; }
+  input, textarea, [contenteditable="true"] { cursor: text; }
+}

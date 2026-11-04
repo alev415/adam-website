@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 
 const sections = [
@@ -21,6 +21,7 @@ export const FolderNavigation = () => {
     };
     const onScroll = () => {
       if (!window.matchMedia('(max-width: 767px)').matches) return;
+      if (window.scrollY <= 0) { reveal(); return; }
       if (navRef.current?.querySelector(':focus-visible')) return;
       setIsScrolling(true);
       clearTimeout(idleTimer.current);
@@ -37,7 +38,7 @@ export const FolderNavigation = () => {
     };
   }, []);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     clearTimeout(idleTimer.current);
     setIsScrolling(false);
   }, [pathname]);
