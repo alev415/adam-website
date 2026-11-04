@@ -14,6 +14,7 @@ interface ProjectProps {
 
 interface CompanySectionProps {
   company: string;
+  chapterTitle: string;
   context: string;
   role: string;
   period: string;
@@ -81,11 +82,11 @@ const Project: React.FC<ProjectProps & { number: number }> = ({ number, title, r
   </article>
 );
 
-const CompanySection: React.FC<CompanySectionProps & { chapter: number }> = ({ company, context, role, period, impact, summary, projects, chapter }) => (
+const CompanySection: React.FC<CompanySectionProps & { chapter: number }> = ({ company, chapterTitle, context, role, period, impact, summary, projects, chapter }) => (
   <section className="portfolio-company" aria-labelledby={`company-${chapter}`}>
     <header className="portfolio-company-header">
       <div className="portfolio-company-meta">
-        <span>CAREER CHAPTER {String(chapter).padStart(2, '0')}</span>
+        <span>CHAPTER {chapter}: {chapterTitle}</span>
         <span>{period}</span>
       </div>
       <h2 id={`company-${chapter}`} className="portfolio-company-name">{company}</h2>
@@ -121,6 +122,7 @@ export const Work = () => {
   const companies: CompanySectionProps[] = [
     {
       company: "HINGE HEALTH",
+      chapterTitle: "Driving Step-Change Growth Through Product-Led Growth",
       context: "Virtual physical therapy",
       role: "Growth Product Leadership",
       period: "2021 - 2025",
@@ -180,6 +182,7 @@ export const Work = () => {
     },
     {
       company: "ROO",
+      chapterTitle: "Building and Shipping Software with AI Agents",
       context: "Veterinary staffing marketplace",
       role: "Staff Product Manager, Hospitals and Experience",
       period: "2025 - Present",
@@ -217,6 +220,7 @@ export const Work = () => {
     },
     {
       company: "UDEMY",
+      chapterTitle: "Driving Behavior Change Through Product Design",
       context: "Online learning platform",
       role: "Growth, Mobile, and Learner Engagement",
       period: "2016 - 2021",
