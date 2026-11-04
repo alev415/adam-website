@@ -1,6 +1,7 @@
 import React from 'react';
 import { FolderLayout } from './FolderLayout';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 interface ProjectProps {
   title: string;
@@ -24,6 +25,8 @@ interface CompanySectionProps {
     description: string;
   };
   projects: ProjectProps[];
+  learnings?: string[];
+  essayPath?: string;
 }
 
 const Project: React.FC<ProjectProps & { number: number }> = ({ number, title, role, description, imageSrc, imageCaption, imageViewport, tags }) => (
@@ -82,7 +85,7 @@ const Project: React.FC<ProjectProps & { number: number }> = ({ number, title, r
   </article>
 );
 
-const CompanySection: React.FC<CompanySectionProps & { chapter: number }> = ({ company, chapterTitle, context, role, period, impact, summary, projects, chapter }) => (
+const CompanySection: React.FC<CompanySectionProps & { chapter: number }> = ({ company, chapterTitle, context, role, period, impact, summary, projects, learnings, essayPath, chapter }) => (
   <section className="portfolio-company" aria-labelledby={`company-${chapter}`}>
     <header className="portfolio-company-header">
       <div className="portfolio-company-meta">
@@ -96,6 +99,7 @@ const CompanySection: React.FC<CompanySectionProps & { chapter: number }> = ({ c
         <p className="portfolio-label">THE MISSION</p>
         <h3 className="portfolio-mission">{summary.title}</h3>
         <p className="text-text-dark">{summary.description}</p>
+        {essayPath && <Link className="portfolio-essay-link" to={essayPath}>Read the strategy behind this work ↗</Link>}
       </div>
       <dl className="portfolio-impact" aria-label={`${company} impact highlights`}>
         {impact.map(item => (
@@ -114,6 +118,10 @@ const CompanySection: React.FC<CompanySectionProps & { chapter: number }> = ({ c
       {projects.map((project, index) => (
         <Project key={project.title} number={index + 1} {...project} />
       ))}
+      {learnings && <aside className="portfolio-learnings" aria-label={`${company} lessons learned`}>
+        <h3>WHAT I LEARNED</h3>
+        <ul>{learnings.map(item => <li key={item}>{item}</li>)}</ul>
+      </aside>}
     </div>
   </section>
 );
@@ -126,15 +134,21 @@ export const Work = () => {
       context: "Virtual physical therapy",
       role: "Growth Product Leadership",
       period: "2021 - 2025",
-      impact: [{"value": "$30M+", "label": "Incremental revenue"}, {"value": "Nearly 100", "label": "Website experiments"}, {"value": "6", "label": "Product and engineering pods"}],
+      impact: [{value: "$30M+", label: "Incremental annual revenue in 2023"}, {value: "~1% → ~10%", label: "Enrollment share from non-deployment channels"}, {value: "+40%", label: "Conversion lift from incentives vs. baseline"}],
+      essayPath: "/writing/beyond-the-sales-calendar",
+      learnings: [
+        "Lowering the cost of learning creates value across channels. Shared infrastructure made experiments faster and cheaper to run.",
+        "Early signals can mislead. Better tracking changed our view of some promising channels, and client adoption could constrain growth even when members responded.",
+        "A successful incentive needs ongoing iteration. When conversion declined in later deployments, we introduced incentive rotation rather than assuming the initial lift would persist."
+      ],
       summary: {
-        title: "Driving over $30 million in incremental revenue through product-led growth",
-        description: "At Hinge Health, a leading virtual physical therapy solution, I helped expand the company's member acquisition strategy beyond its traditional employer-based model. When I joined, the company had no organic or paid acquisition channels. Over my tenure, I built and scaled new growth engines—organic, paid, and referral—driving tens of millions in annual revenue. Along the way, we launched nearly 100 website experiments, created foundational systems for high-velocity execution, and introduced AI-driven product experiences to personalize the member journey."
+        title: "Building Always-On Growth Beyond Employer Launches",
+        description: "Growth at Hinge Health depended heavily on employer launch windows, creating enrollment spikes and limited opportunities to experiment between launches. I led a parallel growth strategy: support the sales engine while building reusable infrastructure for SEO, paid acquisition, and referrals. We focused on reducing deployment overhead, improving baseline conversion, and making new channels faster to test. The work generated over $30M in incremental annual revenue in 2023, while non-deployment channels grew from roughly 1% to roughly 10% of total enrollments."
       },
       projects: [
         {
-          title: "Design System for Growth",
-          description: "To enable fast, high-quality experimentation, we built a modular web design system from the ground up. This system standardized components and templates across pages, significantly accelerating our ability to launch A/B tests and landing pages. The result was faster iteration cycles, consistent UI, and greater collaboration between design, engineering, and marketing teams.",
+          title: "Building the Infrastructure for Faster Growth",
+          description: "Built a shared foundation for experimentation: Contentful for landing-page iteration, Segment for identity and event tracking, Iterable for automated communications, and a modular design system for rapid UI testing. Referral infrastructure supported attribution, eligibility, and fulfillment, while improved tracking and crawlability enabled paid and SEO experiments. These capabilities reduced the effort required to support Sales and test new growth channels.",
           imageSrc: `${import.meta.env.BASE_URL}images/hinge-design-system.png`,
           imageViewport: { viewBox: "256 256 798 692", width: 1310, height: 1204 },
           imageCaption: "Reusable landing page components and growth design system.",
@@ -149,14 +163,14 @@ export const Work = () => {
           tags: ["A/B Testing", "CRO", "Analytics", "User Behavior"]
         },
         {
-          title: "Referral Program",
-          description: "I led the development and launch of Hinge Health's first member referral program, designed to leverage existing user satisfaction and word-of-mouth. The program scaled quickly, driving tens of millions in revenue annually. It became a core acquisition channel that complemented employer-based marketing while helping members advocate for care in their own communities.",
+          title: "Building Referral and Incentive Programs",
+          description: "Developed referrals from two high-trust sources: existing members and providers through EMR integrations. I partnered with Legal to turn incentive concerns into concrete design constraints, using non-monetary, care-aligned rewards such as yoga mats and foam rollers. Client opt-ins, CRM eligibility tracking, and controlled fulfillment formed the operating guardrails. Incentives delivered a 40% conversion lift against baseline; when performance declined across later deployments, we introduced a rotation model to sustain their value.",
           imageSrc: "", // Add image path
           tags: ["Growth", "Referral", "User Acquisition", "Revenue"]
         },
         {
-          title: "SEO and Paid Acquisition Channels",
-          description: "Starting from scratch, I built and scaled both SEO and paid acquisition channels. For SEO, we created educational content, landing pages, and technical infrastructure to improve our search visibility and attract organic traffic. For paid, we tested and optimized across Google, Meta, and other channels to acquire users efficiently. These channels became critical growth levers, generating tens of millions in new revenue.",
+          title: "Building Always-On Acquisition Channels",
+          description: "Built SEO and paid acquisition alongside referrals to create growth opportunities outside employer launch calendars. We improved site crawlability and paid attribution, then used the shared experimentation infrastructure to test new acquisition approaches. Across SEO, paid, and referrals, non-deployment channels grew from roughly 1% to roughly 10% of total enrollments. Better tracking also exposed weaker early bets and helped guide further investment.",
           imageSrc: `${import.meta.env.BASE_URL}images/hinge-seo-content.png`,
           imageViewport: { viewBox: "257 258 1153 920", width: 1667, height: 1434 },
           imageCaption: "Search-focused exercise content and conversion prompts.",

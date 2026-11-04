@@ -31,7 +31,7 @@ export const Experience = () => {
             <ul className="space-y-2 text-text-dark">
               <li className="font-retro text-xs">• Oversaw 6 product and engineering pods managing marketing technology, website, and new user growth</li>
               <li className="font-retro text-xs">• Implemented growth strategies driving 33% YoY revenue increase in 2024</li>
-              <li className="font-retro text-xs">• Led product strategy generating $20M incremental revenue in 2023</li>
+              <li className="font-retro text-xs">• Led product strategy generating over $30M in incremental annual revenue in 2023</li>
               <li className="font-retro text-xs">• Managed Healthcare Data Platform and Partnership Integration Pod</li>
               <li className="font-retro text-xs">• Directly managed 6 product managers and 2 designers</li>
             </ul>

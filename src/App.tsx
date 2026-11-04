@@ -4,7 +4,7 @@ import { LoadingScreen } from './components/LoadingScreen';
 import { MainMenu } from './components/MainMenu';
 import { Experience } from './components/Experience';
 import { Work } from './components/Work';
-import { Writing } from './components/Writing';
+import { Writing, GrowthEssay } from './components/Writing';
 import { FolderNavigation } from './components/FolderNavigation';
 
 function ScrollToTop() {
@@ -30,6 +30,7 @@ function App() {
             <Route path="/experience" element={<Experience />} />
             <Route path="/work" element={<Work />} />
             <Route path="/writing" element={<Writing />} />
+            <Route path="/writing/beyond-the-sales-calendar" element={<GrowthEssay />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
       </Router>
