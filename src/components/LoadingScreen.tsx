@@ -43,19 +43,16 @@ export const LoadingScreen = ({ onComplete }: LoadingScreenProps) => {
 
   return (
     <main id="electronic-safe" onKeyDown={handleKey}>
-      <div className="top"><span>AL / SPECIAL OPERATIONS</span><span className="top-status">{unlocked ? 'VAULT UNLOCKED' : 'VAULT LOCKED'}</span></div>
       <section className="game" aria-labelledby="safe-heading">
         <header>
-          <p className="eyebrow">PERSONNEL ARCHIVE / AL-007</p>
-          <h1 id="safe-heading">Crack the safe to view the dossier</h1>
+          <h1 id="safe-heading">Crack the safe to see Adam's dossier</h1>
           <p className="sub">Enter the three-digit access code.</p>
-          <p className="identity">Adam Levinson · Product leader. Growth builder. Agentic software maker.</p>
         </header>
         <div className="stage">
           <div className="note"><div className="note-label">INTERCEPTED MESSAGE</div><p>“The first two digits are nothing.<br />The last is a week’s worth of days.”</p></div>
           <div className={`safe${unlocked ? ' is-open' : ''}`}>
             <div className="interior" aria-hidden={!unlocked}>
-              <div className="file"><p>DECLASSIFIED / AL-007</p><strong>Adam Levinson</strong><span>PRODUCT · GROWTH · AI</span></div>
+              <button type="button" className="file" aria-label="Open Adam’s dossier" disabled={!unlocked} onClick={onComplete} ref={collectButton}><p>DECLASSIFIED / AL-007</p><strong>Adam Levinson</strong><span>OPEN DOSSIER →</span></button>
             </div>
             <div className="door" aria-hidden={unlocked}>
               <div className="brand"><span>LEVINSON</span><span>ELECTRONIC VAULT / 03</span></div>
@@ -80,7 +77,7 @@ export const LoadingScreen = ({ onComplete }: LoadingScreenProps) => {
             </div>
           </div>
           <div className="below">
-            {unlocked && <div className="collection"><button type="button" className="collect" ref={collectButton} onClick={onComplete}>COLLECT THE DOSSIER →</button><p className="fine" role="status">Access granted. Nice work, agent.</p></div>}
+            {unlocked && <div className="collection"><button type="button" className="collect" onClick={onComplete}>COLLECT THE DOSSIER →</button><p className="fine" role="status">Access granted. Nice work, agent.</p></div>}
             <button type="button" className="skip" onClick={onComplete}>Skip the safe &amp; view my work →</button>
             <p className="fine">No timer. Unlimited attempts. Keyboard supported.</p>
           </div>

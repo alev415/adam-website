@@ -11,3 +11,29 @@
 #electronic-safe .safe { min-height: 386px; }
 #electronic-safe .collection { color: #c4efaf; }
 #electronic-safe .identity { color: #d3d8ca; font: 12px/1.5 Arial, sans-serif; margin: 12px 0 0; }
+
+/* Compact entrance keeps the safe and entry actions close together. */
+#electronic-safe header { padding: 20px 18px 16px; }
+#electronic-safe h1 { font-size: clamp(26px, 4.3vw, 36px); max-width: 600px; margin-bottom: 8px; }
+#electronic-safe .stage { max-width: 500px; }
+#electronic-safe .note { padding: 10px 16px; margin-bottom: 16px; }
+#electronic-safe .note-label { margin-bottom: 4px; }
+#electronic-safe .safe { padding: 12px; min-height: 350px; }
+#electronic-safe .door { padding: 16px 20px; min-height: 324px; }
+#electronic-safe .brand { margin-bottom: 12px; }
+#electronic-safe .panel { padding: 12px; }
+#electronic-safe .message { margin-top: 12px; min-height: 18px; }
+#electronic-safe .below { padding-top: 12px; }
+#electronic-safe .fine { margin-top: 7px; }
+#electronic-safe .file { border: 0; font-family: inherit; transition: transform .2s ease; }
+#electronic-safe .file:hover:enabled { transform: rotate(0deg) translateY(-3px); }
+#electronic-safe .file:disabled { pointer-events: none; }
+@media (max-width: 420px) {
+  #electronic-safe header { padding: 16px 16px 14px; }
+  #electronic-safe .door { padding: 16px 14px; }
+  #electronic-safe .mechanism { gap: 20px; }
+  #electronic-safe .screen-top { font-size: 9px; white-space: nowrap; letter-spacing: .5px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #electronic-safe .file { transition: none; }
+}
