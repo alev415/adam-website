@@ -4,5 +4,6 @@ import react from '@vitejs/plugin-react'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/adam-website/',
+  // Relative asset URLs work on both the GitHub project URL and a custom domain.
+  base: './',
 }) 
