@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import portraitImage from '../assets/images/portrait-clean.jpg';
 import './MainMenu.css';
+import { Soundtrack } from './Soundtrack';
 
 export const MainMenu = () => {
 
@@ -76,6 +77,8 @@ export const MainMenu = () => {
               </a>
             </div>
 
+            <Soundtrack />
+
             {/* Classified Footer */}
             <div className="mt-12 text-xs font-retro text-text-dark opacity-50">
               CLEARANCE LEVEL: TOP SECRET
@@ -102,4 +105,4 @@ export const MainMenu = () => {
       </div>
     </div>
   );
-}; 
+};
