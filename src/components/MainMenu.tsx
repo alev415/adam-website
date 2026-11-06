@@ -69,6 +69,13 @@ export const MainMenu = () => {
               </div>
             </div>
             
+            <div className="home-contact">
+              <p className="font-retro">ESTABLISH CONTACT</p>
+              <a href="https://www.linkedin.com/in/alevinson/" target="_blank" rel="noopener noreferrer" className="font-retro">
+                LinkedIn <span aria-hidden="true">↗</span><span className="sr-only"> (opens in a new tab)</span>
+              </a>
+            </div>
+
             {/* Classified Footer */}
             <div className="mt-12 text-xs font-retro text-text-dark opacity-50">
               CLEARANCE LEVEL: TOP SECRET
