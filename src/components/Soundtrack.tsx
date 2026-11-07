@@ -1,36 +1,49 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import './Soundtrack.css';
 
 export const Soundtrack = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const audioRef = useRef<HTMLAudioElement>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [error, setError] = useState(false);
+
+  const togglePlayback = async () => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    if (!audio.paused) {
+      audio.pause();
+      return;
+    }
+    try {
+      setError(false);
+      await audio.play();
+    } catch {
+      setError(true);
+    }
+  };
 
   return (
-    <section className="mission-soundtrack" aria-label="Optional mission soundtrack">
+    <div className="soundtrack-control">
       <button
         type="button"
-        className="soundtrack-toggle font-retro"
-        aria-expanded={isOpen}
-        aria-controls="mission-soundtrack-player"
-        onClick={() => setIsOpen(open => !open)}
+        className="soundtrack-play"
+        aria-label={error ? 'Retry playing mission soundtrack' : isPlaying ? 'Pause mission soundtrack' : 'Play mission soundtrack'}
+        title={error ? 'Unable to play. Tap to retry.' : isPlaying ? 'Pause soundtrack' : 'Play soundtrack'}
+        onClick={togglePlayback}
       >
-        <span aria-hidden="true">♫</span>
-        <span>MISSION SOUNDTRACK</span>
-        <span aria-hidden="true">{isOpen ? '−' : '+'}</span>
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor">
+          {isPlaying ? <path d="M6 4h4v16H6zm8 0h4v16h-4z" /> : <path d="M7 4v16l14-8z" />}
+        </svg>
       </button>
-      <div id="mission-soundtrack-player" hidden={!isOpen}>
-        {isOpen && (
-          <div className="soundtrack-player">
-            <p>007 theme · Press play when you’re ready.</p>
-            <audio controls preload="none" aria-label="007 mission soundtrack">
-              <source src={`${import.meta.env.BASE_URL}mission-soundtrack.m4a`} type="audio/mp4" />
-              Your browser does not support audio playback.
-            </audio>
-            <div className="soundtrack-actions">
-              <button type="button" onClick={() => setIsOpen(false)}>Close &amp; stop</button>
-            </div>
-          </div>
-        )}
-      </div>
-    </section>
+      <audio
+        ref={audioRef}
+        preload="none"
+        onPlay={() => setIsPlaying(true)}
+        onPause={() => setIsPlaying(false)}
+        onEnded={() => setIsPlaying(false)}
+        onError={() => { setIsPlaying(false); setError(true); }}
+      >
+        <source src={`${import.meta.env.BASE_URL}mission-soundtrack.m4a`} type="audio/mp4" />
+      </audio>
+    </div>
   );
 };

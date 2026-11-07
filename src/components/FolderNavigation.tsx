@@ -1,5 +1,6 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
+import { Soundtrack } from './Soundtrack';
 
 const sections = [
   { to: '/', label: 'HOME', end: true },
@@ -64,6 +65,7 @@ export const FolderNavigation = () => {
           <span>{section.label}</span>
         </NavLink>
       ))}
+      <Soundtrack />
 
     </nav>
   );
