@@ -21,17 +21,11 @@ export const Soundtrack = () => {
         {isOpen && (
           <div className="soundtrack-player">
             <p>007 theme · Press play when you’re ready.</p>
-            <iframe
-              src="https://www.youtube-nocookie.com/embed/A7lLHJ6yfH0?autoplay=0&controls=1&playsinline=1&rel=0"
-              title="007 theme song on YouTube"
-              width="320"
-              height="200"
-              allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen
-            />
+            <audio controls preload="none" aria-label="007 mission soundtrack">
+              <source src={`${import.meta.env.BASE_URL}mission-soundtrack.m4a`} type="audio/mp4" />
+              Your browser does not support audio playback.
+            </audio>
             <div className="soundtrack-actions">
-              <a href="https://www.youtube.com/watch?v=A7lLHJ6yfH0" target="_blank" rel="noopener noreferrer">Open on YouTube ↗<span className="sr-only"> (opens in a new tab)</span></a>
               <button type="button" onClick={() => setIsOpen(false)}>Close &amp; stop</button>
             </div>
           </div>
