@@ -34,6 +34,7 @@ export const Soundtrack = () => {
           {isPlaying ? <path d="M6 4h4v16H6zm8 0h4v16h-4z" /> : <path d="M7 4v16l14-8z" />}
         </svg>
       </button>
+      <span className="soundtrack-label">Mission Soundtrack</span>
       <audio
         ref={audioRef}
         preload="none"
