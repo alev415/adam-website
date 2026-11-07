@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import portraitImage from '../assets/images/portrait-clean.jpg';
 import './MainMenu.css';
-import { Soundtrack } from './Soundtrack';
 
 export const MainMenu = () => {
 
@@ -76,8 +75,6 @@ export const MainMenu = () => {
                 LinkedIn <span aria-hidden="true">↗</span><span className="sr-only"> (opens in a new tab)</span>
               </a>
             </div>
-
-            <Soundtrack />
 
             {/* Classified Footer */}
             <div className="mt-12 text-xs font-retro text-text-dark opacity-50">

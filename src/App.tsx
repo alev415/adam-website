@@ -6,6 +6,7 @@ import { Experience } from './components/Experience';
 import { Work } from './components/Work';
 import { Writing, GrowthEssay } from './components/Writing';
 import { FolderNavigation } from './components/FolderNavigation';
+import { Soundtrack } from './components/Soundtrack';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -21,10 +22,11 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen w-full bg-folder-dark">
+    <div className="min-h-screen w-full bg-folder-dark app-with-soundtrack">
       <Router>
         <ScrollToTop />
         <FolderNavigation />
+        <Soundtrack />
           <Routes>
             <Route path="/" element={<MainMenu />} />
             <Route path="/experience" element={<Experience />} />

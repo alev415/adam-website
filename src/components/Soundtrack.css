@@ -1,4 +1,5 @@
-.mission-soundtrack { margin-top: 22px; max-width: 360px; color: #34362f; }
+.app-with-soundtrack { padding-bottom: 240px; }
+.mission-soundtrack { position: fixed; bottom: 12px; left: 16px; z-index: 60; width: min(360px, calc(100vw - 32px)); padding: 4px 16px; border: 1px solid #b4a482; background: #e2d3b4; box-shadow: 0 4px 16px #151a1526; color: #34362f; }
 .soundtrack-toggle { display: flex; align-items: center; gap: 10px; min-height: 44px; padding: 9px 0; background: transparent; border: 0; font-size: 12px; letter-spacing: .06em; text-align: left; }
 .soundtrack-toggle:hover { color: #a92d24; }
 .soundtrack-toggle > span:first-child { font-size: 20px; }
