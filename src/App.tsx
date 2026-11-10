@@ -14,7 +14,7 @@ function ScrollToTop() {
 }
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(() => !/^#\/work\/?(?:[?#]|$)/i.test(window.location.hash));
 
   if (isLoading) {
     return <LoadingScreen onComplete={() => setIsLoading(false)} />;
