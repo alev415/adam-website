@@ -12,11 +12,11 @@ export const Experience = () => {
             <h3 className="font-retro text-lg text-text-dark mb-1">Staff Product Manager, Hospitals and Experience</h3>
             <h4 className="font-retro text-sm text-text-dark opacity-75 mb-4">June 2025 - Present</h4>
             <ul className="space-y-2 text-text-dark">
-              <li className="font-retro text-xs">• Drove 20% growth in hospitals on the platform in the first year</li>
-              <li className="font-retro text-xs">• Rebuilt the go-to-market motion across B2B sales, Google Ads, SEO, and referral programs</li>
-              <li className="font-retro text-xs">• Rebuilt core product flows to drive more shift postings, better hospital-veterinarian matches, and higher confirmation rates</li>
+              <li className="font-retro text-xs">• Grew the number of hospitals on Roo by 20% in my first year</li>
+              <li className="font-retro text-xs">• Reworked hospital acquisition across business sales, Google Ads, SEO, and referrals</li>
+              <li className="font-retro text-xs">• Redesigned shift posting, hospital-veterinarian matching, and booking confirmation</li>
               <li className="font-retro text-xs">• Launched the mobile app for hospital users</li>
-              <li className="font-retro text-xs">• Independently shipped features using coding agents, including dark mode, admin tool improvements, and review flows to strengthen feedback loops for hospitals and veterinarians</li>
+              <li className="font-retro text-xs">• Used coding agents to build and ship dark mode, admin improvements, and hospital and veterinarian review flows</li>
             </ul>
           </div>
         </div>
@@ -29,11 +29,11 @@ export const Experience = () => {
             <h3 className="font-retro text-lg text-text-dark mb-1">Head of Growth Product</h3>
             <h4 className="font-retro text-sm text-text-dark opacity-75 mb-4">January 2023 - June 2025</h4>
             <ul className="space-y-2 text-text-dark">
-              <li className="font-retro text-xs">• Oversaw 6 product and engineering pods managing marketing technology, website, and new user growth</li>
-              <li className="font-retro text-xs">• Implemented growth strategies driving 33% YoY revenue increase in 2024</li>
-              <li className="font-retro text-xs">• Led product strategy generating over $30M in incremental annual revenue in 2023</li>
-              <li className="font-retro text-xs">• Managed Healthcare Data Platform and Partnership Integration Pod</li>
-              <li className="font-retro text-xs">• Directly managed 6 product managers and 2 designers</li>
+              <li className="font-retro text-xs">• Led six product and engineering teams across the website, marketing technology, and new member growth</li>
+              <li className="font-retro text-xs">• Led growth work that contributed to a 33% year-over-year revenue increase in 2024</li>
+              <li className="font-retro text-xs">• Led product work that generated more than $30M in additional annual revenue in 2023</li>
+              <li className="font-retro text-xs">• Managed the team responsible for healthcare data and partner integrations</li>
+              <li className="font-retro text-xs">• Managed six product managers and two designers</li>
             </ul>
           </div>
 
@@ -41,11 +41,11 @@ export const Experience = () => {
             <h3 className="font-retro text-lg text-text-dark mb-1">Senior Product Manager, Growth</h3>
             <h4 className="font-retro text-sm text-text-dark opacity-75 mb-4">August 2021 - January 2023</h4>
             <ul className="space-y-2 text-text-dark">
-              <li className="font-retro text-xs">• Managed web property for leading Healthcare/telemedicine company</li>
-              <li className="font-retro text-xs">• Achieved 10% improvement in funnel conversion through optimization</li>
-              <li className="font-retro text-xs">• Led CMS management and new user growth channels</li>
-              <li className="font-retro text-xs">• Managed 3 product pods focused on marketing website, growth, and marketing technology</li>
-              <li className="font-retro text-xs">• Spearheaded website redesign and performance improvements</li>
+              <li className="font-retro text-xs">• Managed Hinge Health’s website</li>
+              <li className="font-retro text-xs">• Improved website funnel conversion by 10%</li>
+              <li className="font-retro text-xs">• Managed the website’s content system and developed new member acquisition channels</li>
+              <li className="font-retro text-xs">• Led three product teams across the website, growth, and marketing technology</li>
+              <li className="font-retro text-xs">• Led the website redesign and improved site performance</li>
             </ul>
           </div>
         </div>
@@ -58,9 +58,9 @@ export const Experience = () => {
             <h3 className="font-retro text-lg text-text-dark mb-1">Manager, Product Management</h3>
             <h4 className="font-retro text-sm text-text-dark opacity-75 mb-4">June 2020 - June 2021</h4>
             <ul className="space-y-2 text-text-dark">
-              <li className="font-retro text-xs">• Led team driving 10% increase in consumer retention</li>
-              <li className="font-retro text-xs">• Managed sprint process for 8 engineers, designer, and UX researcher</li>
-              <li className="font-retro text-xs">• Oversaw mobile adoption, video streaming, and anti-piracy initiatives</li>
+              <li className="font-retro text-xs">• Led a team that increased consumer retention by 10%</li>
+              <li className="font-retro text-xs">• Ran sprints for eight engineers, a designer, and a UX researcher</li>
+              <li className="font-retro text-xs">• Led work on mobile adoption, video streaming, and piracy prevention</li>
             </ul>
           </div>
 
@@ -68,9 +68,9 @@ export const Experience = () => {
             <h3 className="font-retro text-lg text-text-dark mb-1">Senior Product Manager, Learning and Engagement</h3>
             <h4 className="font-retro text-sm text-text-dark opacity-75 mb-4">April 2019 - June 2020</h4>
             <ul className="space-y-2 text-text-dark">
-              <li className="font-retro text-xs">• Founding member defining mission, vision, OKRs, and KPIs</li>
+              <li className="font-retro text-xs">• Helped establish the team’s goals and measures of success</li>
               <li className="font-retro text-xs">• Led mobile app and learner engagement strategy</li>
-              <li className="font-retro text-xs">• Achieved 10% retention increase through mobile and marketing initiatives</li>
+              <li className="font-retro text-xs">• Worked on retention through mobile product changes and marketing</li>
             </ul>
           </div>
 
@@ -79,8 +79,8 @@ export const Experience = () => {
             <h4 className="font-retro text-sm text-text-dark opacity-75 mb-4">February 2018 - April 2019</h4>
             <ul className="space-y-2 text-text-dark">
               <li className="font-retro text-xs">• Grew in-app revenue by 99% year over year</li>
-              <li className="font-retro text-xs">• Optimized native app marketplace and course experience</li>
-              <li className="font-retro text-xs">• Implemented key analytics tools: Branch, Braze, and Amplitude</li>
+              <li className="font-retro text-xs">• Improved the mobile app marketplace and course experience</li>
+              <li className="font-retro text-xs">• Introduced Branch, Braze, and Amplitude</li>
             </ul>
           </div>
 
@@ -88,9 +88,9 @@ export const Experience = () => {
             <h3 className="font-retro text-lg text-text-dark mb-1">Product Manager, Growth</h3>
             <h4 className="font-retro text-sm text-text-dark opacity-75 mb-4">March 2016 - February 2018</h4>
             <ul className="space-y-2 text-text-dark">
-              <li className="font-retro text-xs">• Increased new user revenue per visitor by 8% in first 7 months</li>
-              <li className="font-retro text-xs">• Achieved 3% sitewide revenue lift through page redesigns</li>
-              <li className="font-retro text-xs">• Established A/B testing best practices across product teams</li>
+              <li className="font-retro text-xs">• Increased revenue per new visitor by 8% in my first seven months</li>
+              <li className="font-retro text-xs">• Increased sitewide revenue by 3% through page redesigns</li>
+              <li className="font-retro text-xs">• Established shared A/B testing practices across product teams</li>
             </ul>
           </div>
         </div>
@@ -103,9 +103,9 @@ export const Experience = () => {
             <h3 className="font-retro text-lg text-text-dark mb-1">Optimizely, Inc.</h3>
             <h4 className="font-retro text-sm text-text-dark opacity-75 mb-4">March 2013 - November 2015</h4>
             <ul className="space-y-2 text-text-dark">
-              <li className="font-retro text-xs">• Customer Success Manager managing $2M+ ARR portfolio</li>
-              <li className="font-retro text-xs">• Founding team member launching Amsterdam CSM Team</li>
-              <li className="font-retro text-xs">• Developed testing roadmaps for enterprise websites</li>
+              <li className="font-retro text-xs">• Managed customer accounts representing more than $2M in annual recurring revenue</li>
+              <li className="font-retro text-xs">• Helped launch the Amsterdam customer success team</li>
+              <li className="font-retro text-xs">• Planned A/B tests for enterprise customers’ websites</li>
             </ul>
           </div>
 
@@ -113,7 +113,7 @@ export const Experience = () => {
             <h3 className="font-retro text-lg text-text-dark mb-1">Tradecraft Bootcamp</h3>
             <h4 className="font-retro text-sm text-text-dark opacity-75 mb-4">November 2015 - February 2016</h4>
             <ul className="space-y-2 text-text-dark">
-              <li className="font-retro text-xs">• Led 7-person team executing marketing campaigns for KIVA</li>
+              <li className="font-retro text-xs">• Led a seven-person team running marketing campaigns for Kiva</li>
               <li className="font-retro text-xs">• Developed and taught A/B testing curriculum</li>
             </ul>
           </div>

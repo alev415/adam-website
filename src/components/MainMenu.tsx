@@ -25,19 +25,19 @@ export const MainMenu = () => {
             <div className="home-missions">
             {/* Photo Container */}
             <div className="relative mt-20 md:mt-0 md:top-0 md:left-0 w-48 h-48 border-4 border-folder-dark shadow-lg overflow-hidden">
-              <img 
-                src={portraitImage} 
-                alt="Adam Levinson" 
+              <img
+                src={portraitImage}
+                alt="Adam Levinson"
                 className="w-full h-full object-cover object-center grayscale"
               />
             </div>
-            
+
             {/* Mission Select Title */}
             <div className="mt-12">
               <h1 className="text-2xl md:text-3xl font-retro mb-12 text-text-dark">
                 SELECT MISSION
               </h1>
-              
+
               {/* Mission Options */}
               <div className="space-y-6">
                 <Link className="block w-fit py-2" to="/experience">
@@ -48,7 +48,7 @@ export const MainMenu = () => {
                     <span className="font-retro text-sm md:text-base">01 &gt; EXPERIENCE</span>
                   </motion.div>
                 </Link>
-                
+
                 <Link className="block w-fit py-2" to="/work">
                   <motion.div
                     whileHover={{ x: 20 }}
@@ -57,7 +57,7 @@ export const MainMenu = () => {
                     <span className="font-retro text-sm md:text-base">02 &gt; PORTFOLIO</span>
                   </motion.div>
                 </Link>
-                
+
                 <Link className="block w-fit py-2" to="/writing">
                   <motion.div
                     whileHover={{ x: 20 }}
@@ -68,7 +68,7 @@ export const MainMenu = () => {
                 </Link>
               </div>
             </div>
-            
+
             <div className="home-contact">
               <p className="font-retro">ESTABLISH CONTACT</p>
               <a href="https://www.linkedin.com/in/alevinson/" target="_blank" rel="noopener noreferrer" className="font-retro">
@@ -88,13 +88,14 @@ export const MainMenu = () => {
               </div>
               <h3 className="agent-profile-name">Adam Levinson</h3>
               <p className="agent-profile-role"><strong>Staff Product Manager at Roo</strong><br />Hospitals &amp; Experience</p>
+              <p className="agent-context">I build products, lead teams, and run experiments to grow businesses.</p>
               <dl>
                 <div className="agent-record"><dt>SERVICE RECORD</dt><dd><div className="agent-service"><strong>Roo</strong><span>/</span><strong>Hinge Health</strong><span>/</span><strong>Udemy</strong></div><span className="agent-context">Previously Head of Growth Product at Hinge Health.</span></dd></div>
-                <div className="agent-record"><dt>TIME IN THE FIELD</dt><dd><strong className="agent-stat">15+ years</strong><span className="agent-context">Building products in technology.</span></dd></div>
-                <div className="agent-record"><dt>CONFIRMED IMPACT</dt><dd><strong className="agent-stat">$30M+</strong><span className="agent-context">Incremental annual revenue in 2023 at Hinge Health.</span></dd></div>
-                <div className="agent-record"><dt>SPECIALIZATIONS</dt><dd>Product-led growth · Experimentation<br />Behavior change · AI-assisted development</dd></div>
+                <div className="agent-record"><dt>TIME IN THE FIELD</dt><dd><strong className="agent-stat">15+ years</strong><span className="agent-context">Building products and leading product teams.</span></dd></div>
+                <div className="agent-record"><dt>CONFIRMED IMPACT</dt><dd><strong className="agent-stat">$30M+</strong><span className="agent-context">Additional annual revenue from growth work I led at Hinge Health in 2023.</span></dd></div>
+                <div className="agent-record"><dt>SPECIALIZATIONS</dt><dd>Product growth · A/B testing<br />Learning habits · Building with coding agents</dd></div>
               </dl>
-              <div className="agent-verification"><span>PERSONNEL INTELLIGENCE</span><span>VERIFIED</span></div>
+
             </aside>
             </div>
           </div>

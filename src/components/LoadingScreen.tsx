@@ -78,7 +78,7 @@ export const LoadingScreen = ({ onComplete }: LoadingScreenProps) => {
           </div>
           <div className="below">
             {unlocked && <div className="collection"><button type="button" className="collect" onClick={onComplete}>COLLECT THE DOSSIER →</button><p className="fine" role="status">Access granted. Nice work, agent.</p></div>}
-            <button type="button" className="skip" onClick={onComplete}>Skip the safe &amp; view my work →</button>
+            <button type="button" className="skip" onClick={onComplete}>Skip puzzle → View portfolio</button>
             <p className="fine">No timer. Unlimited attempts. Keyboard supported.</p>
           </div>
         </div>

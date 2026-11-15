@@ -79,7 +79,7 @@ const Project: React.FC<ProjectProps & { number: number }> = ({ number, title, r
           )}
           </a>
         </motion.div>
-        {imageCaption && <figcaption className="mt-3 text-sm text-text-dark">{imageCaption} Click to enlarge.</figcaption>}
+        {imageCaption && <figcaption className="mt-3 text-sm text-text-dark">{imageCaption} View full-size image.</figcaption>}
       </figure>}
     </div>
   </article>
@@ -99,7 +99,7 @@ const CompanySection: React.FC<CompanySectionProps & { chapter: number }> = ({ c
         <p className="portfolio-label">THE MISSION</p>
         <h3 className="portfolio-mission">{summary.title}</h3>
         <p className="text-text-dark">{summary.description}</p>
-        {essayPath && <Link className="portfolio-essay-link" to={essayPath}>Read the strategy behind this work ↗</Link>}
+        {essayPath && <Link className="portfolio-essay-link" to={essayPath}>Read how we approached this ↗</Link>}
       </div>
       <dl className="portfolio-impact" aria-label={`${company} impact highlights`}>
         {impact.map(item => (
@@ -130,63 +130,63 @@ export const Work = () => {
   const companies: CompanySectionProps[] = [
     {
       company: "HINGE HEALTH",
-      chapterTitle: "Driving Step-Change Growth Through Product-Led Growth",
+      chapterTitle: "Growing enrollment beyond employer launches",
       context: "Virtual physical therapy",
-      role: "Growth Product Leadership",
+      role: "Growth Product",
       period: "2021 - 2025",
-      impact: [{value: "$30M+", label: "Incremental annual revenue in 2023"}, {value: "~1% → ~10%", label: "Enrollment share from non-deployment channels"}, {value: "+40%", label: "Conversion lift from incentives vs. baseline"}],
+      impact: [{value: "$30M+", label: "Additional annual revenue in 2023"}, {value: "~1% → ~10%", label: "Share of enrollments from SEO, paid acquisition, and referrals"}, {value: "+40%", label: "Conversion lift from incentives vs. baseline"}],
       essayPath: "/writing/beyond-the-sales-calendar",
       learnings: [
-        "Lowering the cost of learning creates value across channels. Shared infrastructure made experiments faster and cheaper to run.",
-        "Early signals can mislead. Better tracking changed our view of some promising channels, and client adoption could constrain growth even when members responded.",
-        "A successful incentive needs ongoing iteration. When conversion declined in later deployments, we introduced incentive rotation rather than assuming the initial lift would persist."
+        "Shared tools made each new experiment faster and cheaper.",
+        "Better tracking overturned some promising early results. Employer adoption also limited growth, even when members responded.",
+        "Incentive results declined after repeated launches. We began rotating rewards."
       ],
       summary: {
-        title: "Building Always-On Growth Beyond Employer Launches",
-        description: "Growth at Hinge Health depended heavily on employer launch windows, creating enrollment spikes and limited opportunities to experiment between launches. I led a parallel growth strategy: support the sales engine while building reusable infrastructure for SEO, paid acquisition, and referrals. We focused on reducing deployment overhead, improving baseline conversion, and making new channels faster to test. The work generated over $30M in incremental annual revenue in 2023, while non-deployment channels grew from roughly 1% to roughly 10% of total enrollments."
+        title: "Reaching members between employer launches",
+        description: "Hinge Health relied on employer launch windows to reach new members. Between launches, we had few opportunities to market or run experiments. I led work on SEO, paid acquisition, and referrals while continuing to support employer launches. Together, this work generated more than $30M in additional annual revenue in 2023."
       },
       projects: [
         {
-          title: "Building the Infrastructure for Faster Growth",
-          description: "Built a shared foundation for experimentation: Contentful for landing-page iteration, Segment for identity and event tracking, Iterable for automated communications, and a modular design system for rapid UI testing. Referral infrastructure supported attribution, eligibility, and fulfillment, while improved tracking and crawlability enabled paid and SEO experiments. These capabilities reduced the effort required to support Sales and test new growth channels.",
+          title: "Making experiments easier to run",
+          description: "We introduced Contentful so teams could update landing pages without engineering help. We also added reusable page components, standardized event tracking with Segment, and automated communications with Iterable. Shared referral tools handled attribution, eligibility, and reward fulfillment.",
           imageSrc: `${import.meta.env.BASE_URL}images/hinge-design-system.png`,
           imageViewport: { viewBox: "256 256 798 692", width: 1310, height: 1204 },
-          imageCaption: "Reusable landing page components and growth design system.",
+          imageCaption: "Reusable landing page components.",
           tags: ["Design System", "Component Library", "Experimentation", "UI/UX"]
         },
         {
-          title: "A/B Testing for Conversion Optimization",
-          description: "We implemented a robust A/B testing framework to drive conversion rate improvements across the web funnel. These experiments focused on messaging, design, and call-to-action optimization—ultimately driving more high-intent visitors to complete the signup flow. This experimentation engine played a key role in expanding our member base and refining our understanding of user behavior.",
+          title: "Testing the signup experience",
+          description: "We tested signup messaging, page designs, and calls to action to understand which changes helped more visitors complete signup.",
           imageSrc: `${import.meta.env.BASE_URL}images/hinge-conversion-testing.png`,
           imageViewport: { viewBox: "256 256 1195 821", width: 1707, height: 1333 },
-          imageCaption: "Hinge Health acquisition page and coverage-check experience.",
+          imageCaption: "Hinge Health signup page and coverage check.",
           tags: ["A/B Testing", "CRO", "Analytics", "User Behavior"]
         },
         {
-          title: "Building Referral and Incentive Programs",
-          description: "Developed referrals from two high-trust sources: existing members and providers through EMR integrations. I partnered with Legal to turn incentive concerns into concrete design constraints, using non-monetary, care-aligned rewards such as yoga mats and foam rollers. Client opt-ins, CRM eligibility tracking, and controlled fulfillment formed the operating guardrails. Incentives delivered a 40% conversion lift against baseline; when performance declined across later deployments, we introduced a rotation model to sustain their value.",
+          title: "Member referrals, provider referrals, and rewards",
+          description: "We built referral programs for existing members and healthcare providers through electronic medical record integrations. I worked with Legal on rewards such as yoga mats and foam rollers, with employer approval and eligibility checks. Incentives increased conversion by 40% against baseline. When results declined in later launches, we began rotating the rewards.",
           imageSrc: "", // Add image path
           tags: ["Growth", "Referral", "User Acquisition", "Revenue"]
         },
         {
-          title: "Building Always-On Acquisition Channels",
-          description: "Built SEO and paid acquisition alongside referrals to create growth opportunities outside employer launch calendars. We improved site crawlability and paid attribution, then used the shared experimentation infrastructure to test new acquisition approaches. Across SEO, paid, and referrals, non-deployment channels grew from roughly 1% to roughly 10% of total enrollments. Better tracking also exposed weaker early bets and helped guide further investment.",
+          title: "Growing through search, ads, and referrals",
+          description: "We improved search visibility and paid-ad tracking to reach members between employer launches. SEO, paid acquisition, and referrals grew from about 1% to about 10% of total enrollments. Better tracking also showed which early experiments weren’t working.",
           imageSrc: `${import.meta.env.BASE_URL}images/hinge-seo-content.png`,
           imageViewport: { viewBox: "257 258 1153 920", width: 1667, height: 1434 },
-          imageCaption: "Search-focused exercise content and conversion prompts.",
+          imageCaption: "Exercise articles with prompts to check eligibility.",
           tags: ["SEO", "Paid Acquisition", "Content Strategy", "Growth"]
         },
         {
-          title: "Freemium Product Launch",
-          description: "To expand access and drive top-of-funnel acquisition, we launched a freemium offering that allowed prospective members to explore the product before enrolling. This initiative led to a 10% increase in accepted members and served as a scalable way to reduce acquisition friction while still delivering value upfront.",
+          title: "Letting people try exercises before enrolling",
+          description: "We launched free exercise content so people could try Hinge Health before enrolling. The launch increased accepted members by 10%.",
           imageSrc: `${import.meta.env.BASE_URL}images/hinge-freemium.png`,
           imageViewport: { viewBox: "256 256 832 970", width: 1344, height: 1482 },
-          imageCaption: "Free exercise content with pathways to covered care.",
+          imageCaption: "Free exercises with links to check coverage and enroll.",
           tags: ["Product Strategy", "Freemium", "User Acquisition", "Conversion"]
         },
         {
-          title: "AI Chatbot for Injury Education",
-          description: "We launched Hinge Health's first AI-powered chatbot to help prospective members better understand their pain and explore treatment options. The chatbot leveraged leading LLMs, evaluated for performance and compliance, and was one of the first HIPAA-compliant bots to go live in the healthcare space. It personalized education and triage at scale, improving the digital experience and driving conversion through helpful, interactive content.",
+          title: "Helping people understand joint and muscle pain",
+          description: "We launched Hinge Health’s first AI chatbot to answer questions about joint and muscle pain and explain treatment options. We evaluated the models for performance and compliance before launch.",
           imageSrc: `${import.meta.env.BASE_URL}images/hinge-ai-chatbot.png`,
           imageViewport: { viewBox: "257 256 902 842", width: 1415, height: 1354 },
           imageCaption: "AI chatbot interface for joint and muscle pain education.",
@@ -196,36 +196,36 @@ export const Work = () => {
     },
     {
       company: "ROO",
-      chapterTitle: "Building and Shipping Software with AI Agents",
+      chapterTitle: "Growing Roo’s hospital marketplace",
       context: "Veterinary staffing marketplace",
       role: "Staff Product Manager, Hospitals and Experience",
       period: "2025 - Present",
-      impact: [{"value": "20%", "label": "Hospital growth in the first year"}, {"value": "Launched", "label": "Hospital mobile app"}, {"value": "Hands-on", "label": "Features shipped with coding agents"}],
+      impact: [{"value": "20%", "label": "Hospital growth in the first year"}, {"value": "Launched", "label": "Hospital mobile app"}, {"value": "Shipped", "label": "Features shipped with coding agents"}],
       summary: {
-        title: "Growing the hospital marketplace, from strategy to shipped product",
-        description: "At Roo, I led the hospital experience and acquisition strategy, driving 20% hospital growth in my first year. I rebuilt the go-to-market motion and core product flows, and launched a mobile app for hospital users. Alongside this work, I used coding agents to independently ship dark mode, admin improvements, and review flows. The projects below highlight that hands-on implementation work."
+        title: "Hospital growth, a mobile app, and new features",
+        description: "At Roo, I led hospital acquisition and the hospital product experience. The number of hospitals on the platform grew by 20% in my first year. I also launched the hospital mobile app and used coding agents to build review features, dark mode, and admin improvements."
       },
       projects: [
         {
-          title: "Review Prompts and Feedback Loops",
-          role: "Product strategy and agent-assisted implementation",
-          description: "Built review prompts into the hospital dashboard to make outstanding feedback visible and give hospital users a clear next step. The experience encourages timely reviews after shifts, helping capture feedback on great experiences and informing future matches.",
+          title: "Prompting hospitals to review completed shifts",
+          role: "Built with coding agents",
+          description: "Added dashboard prompts showing which completed shifts still needed a review.",
           imageSrc: `${import.meta.env.BASE_URL}images/roo-review-prompts.png`,
           imageCaption: "Hospital dashboard prompt encouraging reviews within 30 days.",
-          tags: ["Coding Agents", "Hospital Experience", "Feedback Loops"]
+          tags: ["Coding Agents", "Hospital Experience", "Reviews"]
         },
         {
-          title: "Rating and Review Flows",
-          role: "Product strategy and agent-assisted implementation",
-          description: "Implemented rating and review flows to help hospitals and veterinarians share feedback. Shift-level ratings and actionable review controls make feedback easier to find and contribute, supporting better feedback loops across the marketplace.",
+          title: "Making shift reviews easier to find and submit",
+          role: "Built with coding agents",
+          description: "Built rating and review flows so hospitals and veterinarians could share feedback on completed shifts.",
           imageSrc: `${import.meta.env.BASE_URL}images/roo-rating-flows.png`,
           imageCaption: "Shift-level ratings and thumbs-up / thumbs-down review controls.",
           tags: ["Coding Agents", "Reviews", "Marketplace", "UX"]
         },
         {
           title: "Dark Mode and Admin Tools",
-          role: "Hands-on implementation with coding agents",
-          description: "Independently implemented dark mode and improvements to internal admin tools using coding agents. This work brought hands-on engineering execution into my product practice, allowing me to ship focused improvements directly.",
+          role: "Built with coding agents",
+          description: "Used coding agents to independently build and ship dark mode and improvements to internal admin tools.",
           imageSrc: `${import.meta.env.BASE_URL}images/roo-dark-mode-admin.png`,
           imageCaption: "Dark mode and admin navigation. Hospital contact records omitted.",
           tags: ["Coding Agents", "Dark Mode", "Internal Tools"]
@@ -234,49 +234,49 @@ export const Work = () => {
     },
     {
       company: "UDEMY",
-      chapterTitle: "Driving Behavior Change Through Product Design",
+      chapterTitle: "Helping students return to their courses",
       context: "Online learning platform",
       role: "Growth, Mobile, and Learner Engagement",
       period: "2016 - 2021",
-      impact: [{"value": "+9.8%", "label": "Learning minutes"}, {"value": "+7.3%", "label": "Learning days"}, {"value": "iOS \u2192 Android", "label": "Reminders expanded across platforms"}],
+      impact: [{"value": "+9.8%", "label": "Learning minutes per session"}, {"value": "+7.3%", "label": "Learning days"}, {"value": "iOS", "label": "Initial A/B test"}],
       summary: {
-        title: "Boosting engagement through timely nudges: Learning Reminders",
-        description: "At Udemy, we launched a learning reminders feature to help students stay on track with their courses, particularly during brief periods of downtime. Our research showed that students valued Udemy as a productive alternative to entertainment apps, but many still struggled to return to courses consistently. Time constraints, rather than a lack of motivation, were the primary barrier. By introducing simple and well-timed push notifications, we aimed to re-engage learners and improve overall course consumption."
+        title: "Learning reminders",
+        description: "Students wanted to keep learning but struggled to find time. We built reminders to help them return to their courses. An iOS A/B test increased learning minutes per session by 9.8% and learning days by 7.3%."
       },
       projects: [
         {
-          title: "User Research and Problem Framing",
-          description: "We began by reviewing existing research and synthesizing user insights to define the core problem. Students consistently told us they viewed Udemy as a valuable use of their time, especially when compared to social or entertainment apps. However, many users purchased multiple courses and failed to complete them, often citing a lack of time. This issue was particularly pronounced for professional learners who needed to keep up with evolving skills to remain competitive or transition into new roles.",
+          title: "Understanding why students stopped learning",
+          description: "Students saw Udemy as a useful way to spend spare time, but many struggled to return to courses they had bought. Research pointed to limited time as the main barrier.",
           imageSrc: `${import.meta.env.BASE_URL}images/udemy-user-research.png`,
-          imageCaption: "Research findings on learner motivation and time barriers (PDF page 4).",
+          imageCaption: "Research findings on learner motivation and time barriers.",
           tags: ["User Research", "Problem Discovery", "Qualitative Analysis"]
         },
         {
-          title: "Competitive and Opportunity Analysis",
-          description: "We conducted a competitive analysis across learning, productivity, and behavior-driven apps to explore how others kept users engaged. From this work, we identified a strong opportunity to introduce timely nudges during moments when users were likely to have short windows of availability. The goal was to meet learners where they were and encourage brief, consistent engagement without overwhelming them.",
+          title: "Reviewing reminders in other apps",
+          description: "We reviewed learning and productivity apps to understand how they used reminders. We chose to test reminders that encouraged short learning sessions.",
           imageSrc: `${import.meta.env.BASE_URL}images/udemy-competitive-analysis.png`,
-          imageCaption: "Competitive landscape and reminder examples (PDF page 12).",
+          imageCaption: "Reminder examples from other apps.",
           tags: ["Competitive Analysis", "Market Research", "Product Strategy"]
         },
         {
-          title: "Scope Refinement and Design",
-          description: "To move quickly and reduce complexity, we focused our initial experiment on iOS only. Supporting web and Android would have required significant backend, design, and frontend work. By narrowing the scope to native iOS notifications, we were able to move forward without introducing new infrastructure dependencies. We created wireframes, built prototypes, and finalized high-fidelity designs that matched Udemy's mobile interaction patterns and visual language.",
+          title: "Designing the first version",
+          description: "We started with iOS because local notifications let us test reminders without backend work. We designed the setup flow to fit the existing app.",
           imageSrc: `${import.meta.env.BASE_URL}images/udemy-purchase-flow.png`,
-          imageCaption: "MVP purchase flow and reminder setup designs (PDF page 17).",
+          imageCaption: "Purchase and reminder setup screens.",
           tags: ["Product Design", "MVP", "iOS", "UX Patterns"]
         },
         {
           title: "Build and Launch",
-          description: "With a dedicated iOS engineer on the team, we developed the feature using local device scheduling to manage reminders. This approach allowed us to launch and test quickly without needing backend coordination. We conducted QA, prepared the experiment, and launched an A/B test focused exclusively on iOS users to validate the concept and measure impact.",
+          description: "An iOS engineer built reminders using on-device scheduling. After testing the feature, we launched an A/B test.",
           imageSrc: `${import.meta.env.BASE_URL}images/udemy-return-flow.png`,
-          imageCaption: "Triggered reminder notification and return to My Courses (PDF page 20).",
+          imageCaption: "A learning reminder and the My Courses screen.",
           tags: ["iOS Development", "QA", "A/B Testing"]
         },
         {
-          title: "Results and Impact",
-          description: "The experiment delivered clear and statistically significant results. Average minutes consumed per session increased from 12.4 to 13.61, a 9.8 percent lift, with a p-value of 0.0000003. Learning days, defined as the number of distinct days a user engaged with course content, increased from 0.34 to 0.36, representing a 7.3 percent lift, with a p-value of 0.0000000001. These results gave us strong confidence to explore expanding the feature to Android and web as part of our broader engagement strategy.",
+          title: "Test results",
+          description: "The test increased average learning minutes per session by 9.8% and learning days by 7.3%. Learning days measured the number of distinct days a student engaged with course content. Both results were statistically significant. The results supported exploring reminders on Android and web.",
           imageSrc: `${import.meta.env.BASE_URL}images/udemy-results.png`,
-          imageCaption: "Experiment results: minutes consumed and learning days (PDF page 27).",
+          imageCaption: "Test results: learning minutes and learning days.",
           tags: ["Analytics", "User Engagement", "Product Impact"]
         }
       ]
@@ -286,7 +286,7 @@ export const Work = () => {
   return (
     <FolderLayout title="PORTFOLIO">
       <div className="portfolio-chapters">
-        <p className="portfolio-intro">Growth strategy, product leadership, and hands-on execution. Explore the mission, impact, and selected work from each chapter.</p>
+        <p className="portfolio-intro">Selected projects from Hinge Health, Roo, and Udemy: what we built, why we built it, and what happened.</p>
         {companies.map((company, index) => (
           <CompanySection key={company.company} chapter={index + 1} {...company} />
         ))}
